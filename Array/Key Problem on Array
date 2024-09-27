@@ -1,0 +1,11 @@
+### **Key Array Problems to Prepare:**
+
+1. **Array Basics:**
+   - Find the missing number in an array of size n.
+   - Find the duplicate number in an array.
+   - Reverse an array.
+
+2. **Advanced Problems:**
+   - **Kth largest/smallest element in an array** (can be solved using quickselect or heaps).
+   - **Subarray Sum Equals K:** Given an array of integers and an integer k, find the number of subarrays whose sum equals k.
+   - **Container With Most Water:** Given n non-negative integers representing the heights of vertical lines, find two lines that, together with the x-axis, form a container that holds the most water.
