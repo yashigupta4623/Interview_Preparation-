@@ -1,0 +1,91 @@
+1. Linear Search
+Definition: Linear Search is a simple algorithm that sequentially checks each element of the list until the target element is found or the list ends. It works on both unsorted and sorted lists.
+
+Time Complexity:
+
+Best Case: O(1) (when the target is the first element)
+Worst Case: O(n) (when the target is the last element or not present at all)
+Python Code for Linear Search:
+
+python
+Copy code
+def linear_search(arr, target):
+    """
+    Perform a linear search for a target element in a list.
+
+    Parameters:
+    arr (list): List of elements to search through.
+    target (any): Element to search for.
+
+    Returns:
+    int: Index of the target element if found, otherwise -1.
+    """
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  # Return the index of the target element
+    return -1  # Return -1 if the target is not found
+
+# Example usage:
+arr = [10, 23, 45, 70, 11, 15]
+target = 70
+index = linear_search(arr, target)
+print(f"Element found at index: {index}" if index != -1 else "Element not found")
+2. Binary Search
+Definition: Binary Search is a more efficient search algorithm that works on sorted lists. It repeatedly divides the search interval in half. If the target value is less than the middle element, it searches the left half, otherwise the right half, until the target is found or the interval is empty.
+
+Time Complexity:
+
+Best Case: O(1) (if the middle element is the target)
+Worst Case: O(log n) (each step reduces the search space by half)
+Pre-condition:
+
+The list must be sorted for Binary Search to work.
+Python Code for Binary Search (Iterative):
+
+python
+Copy code
+def binary_search(arr, target):
+    """
+    Perform a binary search for a target element in a sorted list.
+
+    Parameters:
+    arr (list): Sorted list of elements to search through.
+    target (any): Element to search for.
+
+    Returns:
+    int: Index of the target element if found, otherwise -1.
+    """
+    left, right = 0, len(arr) - 1
+
+    while left <= right:
+        mid = left + (right - left) // 2  # Avoid potential overflow
+        
+        # Check if the target is at the middle
+        if arr[mid] == target:
+            return mid
+        # If the target is smaller, ignore the right half
+        elif arr[mid] > target:
+            right = mid - 1
+        # If the target is larger, ignore the left half
+        else:
+            left = mid + 1
+    
+    return -1  # Return -1 if the target is not found
+
+# Example usage:
+arr = [11, 15, 23, 45, 70, 85]
+target = 70
+index = binary_search(arr, target)
+print(f"Element found at index: {index}" if index != -1 else "Element not found")
+Differences Between Linear Search and Binary Search:
+Aspect	Linear Search	Binary Search
+Search Space	Unsorted or sorted list	Sorted list
+Time Complexity	O(n)	O(log n)
+Approach	Sequential checking	Divide and conquer
+Best Case	O(1) (target at the start)	O(1) (target at the middle)
+Worst Case	O(n) (target at the end or not found)	O(log n) (target at the extremes or not found)
+Use Cases	Small or unsorted datasets	Large, sorted datasets
+Summary:
+Linear Search is simpler and works for any list, but it’s less efficient for large datasets.
+Binary Search is highly efficient but only works for sorted lists.
+
