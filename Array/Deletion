@@ -1,0 +1,62 @@
+1. Delete an element from the beginning of the array:
+python
+Copy code
+def delete_from_beginning(arr):
+    """
+    Delete the first element from the list.
+    
+    Parameters:
+    arr (list): The list from which the first element will be deleted.
+    """
+    if len(arr) > 0:
+        removed_element = arr.pop(0)
+        print(f"Element {removed_element} deleted from the beginning: {arr}")
+    else:
+        print("The list is empty!")
+
+# Example usage:
+my_list = [1, 2, 3, 4]
+delete_from_beginning(my_list)
+2. Delete an element from the end of the array:
+python
+Copy code
+def delete_from_end(arr):
+    """
+    Delete the last element from the list.
+    
+    Parameters:
+    arr (list): The list from which the last element will be deleted.
+    """
+    if len(arr) > 0:
+        removed_element = arr.pop()
+        print(f"Element {removed_element} deleted from the end: {arr}")
+    else:
+        print("The list is empty!")
+
+# Example usage:
+my_list = [1, 2, 3, 4]
+delete_from_end(my_list)
+3. Delete an element from a specific index in the array:
+python
+Copy code
+def delete_from_index(arr, index):
+    """
+    Delete an element from a specific index in the list.
+    
+    Parameters:
+    arr (list): The list from which an element will be deleted.
+    index (int): The index of the element to be deleted.
+    """
+    if 0 <= index < len(arr):
+        removed_element = arr.pop(index)
+        print(f"Element {removed_element} deleted from index {index}: {arr}")
+    else:
+        print(f"Invalid index! Index must be between 0 and {len(arr) - 1}.")
+
+# Example usage:
+my_list = [1, 2, 3, 4]
+delete_from_index(my_list, 2)
+Explanation:
+Delete from the beginning: The pop(0) method removes and returns the first element.
+Delete from the end: The pop() method without arguments removes and returns the last element.
+Delete from a specific index: The pop(index) method removes and returns the element at the specified index.
