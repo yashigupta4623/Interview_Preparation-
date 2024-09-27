@@ -1,0 +1,27 @@
+### **Important Array Concepts for MAANG Interviews:**
+
+#### **1. Two-pointer Technique:**
+   - Useful for problems like finding pairs that sum to a target, sorting, or removing duplicates.
+   - **Example Problems:**
+     - **Pair with target sum:** Given a sorted array, find two numbers that sum to a target.
+     - **Merge two sorted arrays:** Merge two arrays without using extra space.
+
+#### **2. Sliding Window Technique:**
+   - Efficient for finding subarrays with specific properties (e.g., sum, maximum).
+   - **Example Problems:**
+     - **Maximum sum of subarray of size k:** Find the subarray with the maximum sum of size k.
+
+#### **3. Kadane’s Algorithm:**
+   - Used for finding the maximum sum subarray in O(n) time.
+   - **Example Problem:**
+     - **Maximum Subarray:** Given an array of integers, find the contiguous subarray with the largest sum.
+
+#### **4. Dynamic Array (Resizable Array):**
+   - **Example:** In languages like Python, lists or dynamic arrays automatically adjust size.
+   - More flexible but may involve **amortized O(1)** insertion.
+
+#### **5. Matrix Manipulation:**
+   - Multi-dimensional arrays are frequently used in questions involving matrices (e.g., matrix rotation, traversal).
+   - **Example Problems:**
+     - **Rotate matrix by 90 degrees**
+     - **Spiral order matrix traversal**
