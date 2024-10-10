@@ -1,0 +1,52 @@
+Object Oriented Programming is a fundamental concept in Python, empowering developers to build modular, maintainable, and scalable applications.
+OR
+In Easier words, "Object-Oriented Programming (OOP) in Python is a way of structuring your code to make it more organized, reusable, and easier to understand. It’s based on the concept of "classes" and "objects"."
+
+The main concept of object-oriented Programming (OOPs) or oops concepts in Python is to bind the data and the functions that work together as a single unit so that no other part of the code can access this data.
+
+The core OOP principles—classes, objects, inheritance, encapsulation, polymorphism, and abstraction.
+
+![alt text](image.png)
+
+- Class :
+A class is a collection of objects. 
+A class contains the blueprints or the prototype from which the objects are being created. 
+It is a logical entity that contains some attributes and methods. 
+
+Some points on Python class:  
+-Classes are created by keyword "class".
+- Attributes are the variables that belong to a class.
+- Attributes are always public and can be accessed using the dot (.) operator. Eg.: Myclass.Myattribute
+
+Syntax :
+```
+class ClassName:
+    #statements
+
+- Objects : 
+An instance of a class, with its own specific data and behavior based on the class.
+It may be any real-world object like a mouse, keyboard, pen etc. Integers, strings, floating-point numbers, even arrays, and dictionaries, are all objects.
+
+An Object consists of :
+- State -> Attributes/Properties of the object --> Age, Color of the Dog(Example)
+- Behaviour -> Methods/Response of the object --> Eating or Sleeping(Example)
+- Identity -> Unique Name & enables to interact objects --> Name of the dog(Example)
+
+Syntax:
+obj = Dog() #Dog is the class
+
+-The Python self :
+*This is similar to this pointer in C++ and this reference in Java.
+Class methods must have an extra first parameter in the method definition. We do not give a value for this parameter when we call the method, Python provides it
+If we have a method that takes no arguments, then we still have to have one argument.
+It represents the instance of the class, allowing you to access the instance's attributes and methods. Every time you create an object from a class and call one of its methods, Python automatically passes the object as the first argument to the method – this argument is typically called self.
+
+The Python __init__ Method 
+The __init__ method is similar to constructors in C++ and Java. It is run as soon as an object of a class is instantiated. The method is useful to do any initialization you want to do with your object.
+
+- The Python __init__ Method 
+*The __init__ method is similar to constructors in C++ and Java. 
+It is run as soon as an object of a class is instantiated. 
+The method is useful to do any initialization you want to do with your object.
+
+
