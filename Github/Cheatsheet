@@ -165,3 +165,4 @@
    - What is the purpose of a `.gitignore` file?
    - How do you revert a commit that has already been pushed?
    - What are the differences between Git and GitHub?
+   - What is the difference between Git Pull and Git Push? [Major Important]
