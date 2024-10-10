@@ -48,3 +48,241 @@ It is run as soon as an object of a class is instantiated.
 The method is useful to do any initialization you want to do with your object.
 
 
+FOUR PILLAR OF OOPS:
+1. Python Inheritance :
+- It is the capability of one class to derive or inherit the properties from another class. 
+- Derived/Child Class -> class that derives properties.
+- Base/Parent Class -> class from which properties being derived.
+- Shows real-world relationship well.
+- Provides code Reusability.
+- Allow to add more & more features without modifying it.
+- Transitive in Nature if B derived from A thnn all the subclasses from B would automatically inherit from A.
+
+Types of Inheritance :-
+- Single Inheritance: Single-level inheritance enables a derived class to inherit characteristics from a single-parent class.
+- Multilevel Inheritance: Multi-level inheritance enables a derived class to inherit properties from an immediate parent class which in turn inherits properties from his parent class. 
+- Hierarchical Inheritance: Hierarchical-level inheritance enables more than one derived class to inherit properties from a parent class.
+- Multiple Inheritance: Multiple-level inheritance enables one derived class to inherit properties from more than one base class.
+
+Example : 
+```
+# Python code to demonstrate how parent constructors
+# are called.
+
+# parent class
+class Person(object):
+
+    # __init__ is known as the constructor
+    def __init__(self, name, idnumber):
+        self.name = name
+        self.idnumber = idnumber
+
+    def display(self):
+        print(self.name)
+        print(self.idnumber)
+        
+    def details(self):
+        print("My name is {}".format(self.name))
+        print("IdNumber: {}".format(self.idnumber))
+    
+# child class
+class Employee(Person):
+    def __init__(self, name, idnumber, salary, post):
+        self.salary = salary
+        self.post = post
+
+        # invoking the __init__ of the parent class
+        Person.__init__(self, name, idnumber)
+        
+    def details(self):
+        print("My name is {}".format(self.name))
+        print("IdNumber: {}".format(self.idnumber))
+        print("Post: {}".format(self.post))
+
+
+# creation of an object variable or an instance
+a = Employee('Rahul', 886012, 200000, "Intern")
+
+# calling a function of the class Person using
+# its instance
+a.display()
+a.details()
+```
+
+2. Python Polymorphism :
+- It simply means having many forms.
+- In programming, polymorphism means the same function name (but different signatures) being used for different types. 
+- The key difference is the data types and number of arguments used in function.
+
+Example : len() function in python
+as len("greeks") and len([45,34,23,33])
+
+OR
+
+def add(x, y, z = 0): 
+    return x + y+z
+
+# Driver code 
+print(add(2, 3))
+print(add(2, 3, 4))
+
+[IMPORTANT!!]
+
+Abstract base classes (ABCs) define a common interface for a group of subclasses. They cannot be instantiated themselves and require subclasses to provide implementations for their abstract methods. ABCs ensure that derived classes adhere to a specific protocol, thus supporting polymorphism.
+
+
+Example:
+```
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+
+animals = [Dog(), Cat()]
+for animal in animals:
+    print(animal.sound())
+# Output:
+# Bark
+# Meow
+```
+
+-What is method overriding in polymorphism?
+Method overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. This allows the subclass to customize or completely replace the behavior of the method inherited from the superclass.
+
+Example:
+```
+class Animal:
+    def sound(self):
+        return "Some sound"
+
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+
+dog = Dog()
+print(dog.sound())  # Output: "Bark"
+```
+
+- METHOD OVERLOADING :
+Method Overloading in Python means creating methods with the same name but different parameters. Although Python doesn’t support it natively, you can simulate it using:
+
+1. **Default Parameters**: Provide default values for parameters.
+2. **`*args` and `**kwargs`**: Allow methods to handle a variable number of arguments.
+3. **Conditional Logic**: Use conditions to handle different argument types or counts within the same method.
+
+Example with `*args`:
+```python
+class Calculator:
+    def add(self, *args):
+        return sum(args)
+
+calc = Calculator()
+print(calc.add(2, 3))      # Output: 5
+print(calc.add(2, 3, 4))   # Output: 9
+```
+
+This flexibility lets Python mimic method overloading by handling various argument configurations in a single method.
+
+- What is __init__ in Python?
+__init__ is a special method (constructor) in Python classes. It’s automatically called when a new instance (object) of the class is created. Its primary purpose is to initialize the object’s attributes or perform any setup required for the object.
+
+- What is super() in Python?
+super() is used to call methods of a superclass (parent class) from a subclass (child class). It returns a proxy object that delegates method calls to the superclass. This is useful for accessing inherited methods that have been overridden in a subclass.
+
+
+class ChildClass(ParentClass):
+    def __init__(self, arg1, arg2):
+        super().__init__(arg1)  # Calls the __init__() method of the ParentClass
+        self.arg2 = arg2
+
+- Why is self used in Python?
+'self' is a convention in Python used to refer to the instance of a class (object) itself. It’s the first parameter of instance methods and refers to the object calling the method. It allows methods to access and manipulate attributes (variables) that belong to the instance.
+
+
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        return f"Hello, {self.name}!"
+
+obj = MyClass("Alice")
+print(obj.greet())  # Output: Hello, Alice!
+
+3. Python Encapsulation :
+- It describes the idea of wrapping data and the methods that work on data within one unit. 
+- This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data. 
+- To prevent accidental change, an object’s variable can only be changed by an object’s method. Those types of variables are known as private variables.
+- It encapsulates all the data that is member functions, variables, etc.
+
+Example :
+```
+# Python program to
+# demonstrate private members
+# "__" double underscore represents private attribute. 
+# Private attributes start with "__".
+
+# Creating a Base class
+class Base:
+    def __init__(self):
+        self.a = "GeeksforGeeks"
+        self.__c = "GeeksforGeeks" 
+
+# Creating a derived class
+class Derived(Base):
+    def __init__(self):
+
+        # Calling constructor of
+        # Base class
+        Base.__init__(self)
+        print("Calling private member of base class: ")
+        print(self.__c)
+
+
+# Driver code
+obj1 = Base()
+print(obj1.a)
+
+# Uncommenting print(obj1.c) will
+# raise an AttributeError
+
+# Uncommenting obj2 = Derived() will
+# also raise an AtrributeError as
+# private member of base class
+# is called inside derived class
+```
+
+4. Data Abstraction :
+- It hides unnecessary code details from the user. 
+- When we do not want to give out sensitive parts of our code implementation and this is where data abstraction came.
+
+Example :
+```
+class Rectangle:
+    def __init__(self, length, width):
+        self.__length = length  # Private attribute
+        self.__width = width    # Private attribute
+
+    def area(self):
+        return self.__length * self.__width
+
+    def perimeter(self):
+        return 2 * (self.__length + self.__width)
+
+
+rect = Rectangle(5, 3)
+print(f"Area: {rect.area()}")          # Output: Area: 15
+print(f"Perimeter: {rect.perimeter()}")  # Output: Perimeter: 16
+
+# print(rect.__length)  # This will raise an AttributeError as length and width are private attributes
+```
