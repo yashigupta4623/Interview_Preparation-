@@ -1,0 +1,191 @@
+-  A database(a software system) is an organized collection of structured data, usually controlled by a database management system (DBMS). 
+- Databases help us easily store, access, and manipulate data held on a computer.
+
+- SQL stands for Structured Query Language & developed by IBM Computer Scientists in the 1970s.  
+- SQL is a computer language used to interact with relational database systems
+- By executing queries SQL can create, update, delete, and retrieve data in databases like MySQL, Oracle, PostgreSQL, etc. 
+- SQL is a query language that communicates with databases.
+- SQL is a non-procedural language.["what to do" not "how to do"]
+
+- Why to Learn SQL?
+Without a lot of coding knowledge, we can manage a database with SQL.
+Simple and easy to learn.
+SQL is an ANSI and standard language for database manipulation.
+SQL retrieves large amounts of data very fast.
+
+[Important Note] -> In SQL, keywords are not case-sensitive, meaning “update” is equivalent to “UPDATE“.
+
+- Four/4 SQL commands?
+1. Data Definition Language : used to create the database structure.
+Commands are : CREATE, ALTER, DROP, RENAME, TRUNCATE, COMMENT
+
+2. Data Manipulation Language : used to updated with new data.
+Commands are : INSERT, UPDATE, DELETE
+
+3. Data Query Language : used to perfome queries on the data within schema objects.
+Command is : SELECT
+
+4. Data Control Language: mainly deal with the rights, permissions, and other controls of the database system. 
+Commands are : GRANT, REVOKE
+
+5. Transaction Control Language :  a set of tasks into a single execution unit. Each transaction begins with a specific task and ends when all the tasks in the group are successfully completed. If any of the tasks fail, the transaction fails.
+ -  a transaction has only two results: success or failure.
+Commands are : BEGIN TRANSACTION, COMMIT, ROLLBACK, SAVEPOINT
+
+- SQL Important Commands
+Here is the list of some important SQL Commands:
+
+• Commands - Descriptions
+SELECT - Used to retrieve data from a database.
+INSERT - Adds new records or rows to a table.
+UPDATE - Modifies existing records in a table.
+DELETE - Removes records from a table.
+CREATE TABLE - Creates a new table in the database.
+ALTER TABLE - Modifies an existing table structure.
+DROP TABLE - Deletes a table from the database.
+CREATE INDEX - Creates an index on a table column to speed up data retrieval.
+DROP INDEX - Removes an index from a table.
+CREATE VIEW - Creates a virtual table based on the result of a SQL statement.
+DROP VIEW - Deletes a view from the database.
+INSERT INTO SELECT - Inserts data from one table into another based on a query.
+TRUNCATE TABLE - Removes all records from a table, but keeps the table structure intact.
+ALTER TABLE ADD CONSTRAINT - Adds a constraint to a table after it has been created.
+GRANT - Gives specific privileges to database users.
+REVOKE - Removes specific privileges from database users.
+COMMIT - Saves all changes made since the last commit.
+ROLLBACK - Discards all changes made since the last commit.
+BEGIN TRANSACTION - Starts a new transaction.
+SET TRANSACTION - Sets characteristics for the transaction.
+
+- Uses of SQL :
+-> Data Definition.
+-> Data Retrieval.
+-> Data Manipulation.
+-> Access Control.
+-> Data Sharing.
+
+-Types of Operators in SQL
+Different types of operators in SQL are:
+1. Arithmetic operator(+,-,*,/,%)
+2. Comparison operator(=, <,>,>=,<=,<>)
+3. Logical operator(AND, NOT, OR)
+4. Bitwise Operators(&,|, ^,~,<<,>>)
+5. Compound Operators(+=,-=,*=,/=,%=,&=,^=,|=)
+6. SQL Special Operators(ALL, ANY, BETWEEN, IN, EXISTS, SOME, UNIQUE)
+
+
+Commands Execution : 
+- Create : CREATE DATABASE databse_name;
+- to list Db : SHOW DATABASES;
+- to Use a specific Db: USE database_name;
+- Drop(to delete the exisiting db permanently from DBMS) : DROP DATABSE database_name; 
+OR
+DROP DATABASE IF EXISTS database_name;
+- RENAME : REANAME DATABASE [curr_database_name] TO [new_db_name];
+- Sorting Results with "ORDER BY" : Example : SELECT name, age FROM employees ORDER BY age DESC;
+- Limiting Results with LIMIT Clause : Example : SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 3;
+-  Aggregating Data with GROUP BY and Aggregation Functions : Example
+SELECT department, AVG(salary) AS average_salary FROM employees GROUP BY department;
+- Syntax to create a table in SQL, use this CREATE TABLE syntax:
+CREATE table table_name
+(
+Column1 datatype (size),
+column2 datatype (size),
+.
+.
+columnN datatype(size)
+);
+- To add data to the table, we use INSERT INTO command, the syntax is as shown below:
+INSERT INTO table_name (column1, column2, …) VALUES (value1, value2, …);
+- Create Table From Another Table :
+CREATE TABLE new_table_name AS
+    SELECT column1, column2,…
+    FROM existing_table_name
+    WHERE ...;
+
+/*
+[IMPORTANT] ->
+- If you try to create a table that already exists, MySQL will throw an error. To avoid this, you can use the CREATE TABLE IF NOT EXISTS syntax.
+- DROP -> to delete the table from the db, DELETE-> to delete the data in the db, TRUNCATE -> used to delete all the rows or tuples from a table. Unlike the DELETE command, the TRUNCATE command does not contain a WHERE clause.
+- Temporary Tables are Created in TempDB and are automatically deleted as soon as the last connection is terminated. Temporary Tables helps us to store and process intermediate results. 
+-OFFSET 2 means, the initial 2 rows are excluded or avoided, example :
+SELECT * FROM Employee
+LIMIT 2 OFFSET 2; 
+/* in this, the first two rows are excluded. */
+*/
+
+-To Add a New Column with ALTER TABLE:
+ALTER TABLE table_name ADD column_name datatype;
+-Truncate -> TRUNCATE TABLE  table_name;
+-Drop: DROP DATABASE/TABLE db_name/table_name;
+- The syntax to create a copy/duplicate/backup of a table in SQL is:
+CREATE TABLE Table_Name AS SELECT * FROM Source_Table_Name;
+- To alter/modify the table use the ALTER TABLE syntax:
+ALTER TABLE table_name
+clause [column_name] [datatype]; 
+/* clause -> ADD/MODIFY/DROP/RENAME
+- Random() : to select randomly
+SELECT col_1,col_2, ... FROM Table_Name
+ORDER BY RAND()
+LIMIT 1 /* can/can't use */
+- IN operator compares a value with a set of values, and it returns a TRUE if the value belongs to that given set, else it returns a FALSE.
+- Update Syntax
+The syntax for SQL UPDATE Statement is :
+UPDATE table_name SET column1 = value1, column2 = value2,… 
+WHERE condition;
+- Syntax: DELETE FROM table_name WHERE some_condition;
+- SQL LIKE operator is used with the WHERE clause to search for a specified pattern in a column. Syntax :
+SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+- SQL IN Syntax
+The Syntax of the IN operator is as follows:
+SELECT column_name FROM table_name WHERE condition IN (condition_value1, condition_value2 …..);
+- NOT Syntax
+SELECT column1, colomn2, … 
+FROM table_name WHERE NOT condition; 
+- The SQL NOT EQUAL Operator syntax is:
+SELECT * FROM table_name WHERE column_name != value;
+- SQL IS NULL syntax is:
+SELECT * FROM table_name WHERE column_name IS NULL;
+- The Syntax of the SQL UNION operator is:
+SELECT columnnames FROM table1
+UNION/UNION ALL
+SELECT columnnames FROM table2;
+/* Note: SQL UNION and UNION ALL difference is that UNION operator removes duplicate rows from results set and 
+UNION ALL operator retains all rows, including duplicate. */
+- SQL Except Clause
+In SQL, EXCEPT returns those tuples that are returned by the first SELECT operation, and not returned by the second SELECT operation.
+To retain duplicates, we must explicitly write EXCEPTALL instead of EXCEPT.
+Syntax :
+SELECT col1
+       FROM Table1
+EXCEPT
+SELECT c1
+       FROM Table2;
+- The basic syntax of the ‘BETWEEN' the operator is as follows:
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+- ALL with SELECT Statement:
+Syntax:
+SELECT ALL field_name
+FROM table_name
+WHERE condition(s);
+- ANY :
+ANY compares a value to each value in a list or results from a query and evaluates to true if the result of an inner query contains at least one row.
+ANY return true if any of the subqueries values meet the condition.
+ANY must be preceded by comparison operators. 
+Syntax:
+SELECT column_name(s) FROM table_name
+WHERE column_name comparison_operator ANY
+(SELECT column_name
+FROM table_name
+WHERE condition(s));
+
+/*IMPT: Use 'DISTINCT' keyword in order to get distinct values from the db right after 'SELECT' */
+-INTERSECT :
+Syntax:
+SELECT column1 , column2 FROM table_names WHERE condition
+INTERSECT
+SELECT column1 , column2 FROM table_names WHERE condition;
