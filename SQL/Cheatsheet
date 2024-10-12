@@ -128,6 +128,7 @@ clause [column_name] [datatype];
 SELECT col_1,col_2, ... FROM Table_Name
 ORDER BY RAND()
 LIMIT 1 /* can/can't use */
+
 - IN operator compares a value with a set of values, and it returns a TRUE if the value belongs to that given set, else it returns a FALSE.
 - Update Syntax
 The syntax for SQL UPDATE Statement is :
@@ -152,6 +153,7 @@ SELECT * FROM table_name WHERE column_name IS NULL;
 SELECT columnnames FROM table1
 UNION/UNION ALL
 SELECT columnnames FROM table2;
+
 /* Note: SQL UNION and UNION ALL difference is that UNION operator removes duplicate rows from results set and 
 UNION ALL operator retains all rows, including duplicate. */
 - SQL Except Clause
@@ -184,8 +186,35 @@ FROM table_name
 WHERE condition(s));
 
 /*IMPT: Use 'DISTINCT' keyword in order to get distinct values from the db right after 'SELECT' */
+
 -INTERSECT :
 Syntax:
 SELECT column1 , column2 FROM table_names WHERE condition
 INTERSECT
 SELECT column1 , column2 FROM table_names WHERE condition;
+
+- SQL Aggregate Functions: are functions where the values of multiple rows are grouped as input on certain criteria to form a single value result of more significant meaning. Various Aggregate Functions are Count(), Sum(), Avg(), Min(), Max()
+
+- PRIMARY KEY in SQL is a column (or group of columns) that uniquely identifies the records in that table. A primary key must contain unique values and can not have any NULL value.
+- Primary keys can be classified into two categories Simple primary key that consists of one column and composite primary key that consists of Multiple column.
+
+- A foreign key is a column or a combination of columns in a table that establishes a link between two tables in a relational database. It refers to the primary key in another table, creating a relationship between them.
+
+- A composite key is made by the combination of two or more columns in a table that can be used to uniquely identify each row in the table when the columns are combined uniqueness of a row is guaranteed, but when it is taken individually it does not guarantee uniqueness, or it can also be understood as a primary key made by the combination of two or more attributes to uniquely identify every row in a table. 
+
+-The keys that contain all the properties needed to become a Candidate Key are known as Alternate Keys. These are basically secondary Candidate Keys that can uniquely identify a row in a table. So, Alternate Keys are also sometimes known as “Secondary Keys”.
+
+- SQL JOIN clause is used to query and access data from multiple tables by establishing logical relationships between them. It can access data from multiple tables simultaneously using common key values shared across different tables. 
+- Types of Join:
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL JOIN
+SELF JOIN -> allows us to combine the rows from the same table based on some specific conditions.
+Natural join -> A natural join returns all rows by matching values in common columns having same name and data type of columns and that column should be present in both tables.
+Cross Join in SQL produces a result set that contains the cartesian product of two or more tables. Cross join is also called a Cartesian Join.
+
+
+- UPDATE & DELETE WITH JOIN
+UPDATE/DELETE table1 FROM table1 JOIN table2 
+ON table1.attribute_name = table2.attribute_name WHERE condition;
