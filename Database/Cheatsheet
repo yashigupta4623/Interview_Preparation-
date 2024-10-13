@@ -1,0 +1,66 @@
+-> Overview
+- A Database Management System (DBMS) is software for managing and organizing data in a structured way. It features data modeling, storage, retrieval, concurrency control, integrity, and security. Types include RDBMS and NoSQL.
+
+-> Key Pointers:
+- DBMS allows creating, modifying, querying databases.
+- Ensures efficient data storage and retrieval.
+- Manages concurrent access, data integrity, and security.
+- Includes backup and recovery options.
+
+-> Database languages: DDL (schema creation), DML (data manipulation), DCL (access control), TCL (transaction control).
+- Primary DDL commands include CREATE, ALTER, TRUNCATE, DROP, and RENAME.
+- Common DML commands: SELECT, INSERT, UPDATE, DELETE, MERGE.
+- DCL commands: GRANT (give permissions), REVOKE (withdraw permissions).
+- TCL commands: ROLLBACK (undo changes), COMMIT (save changes), SAVEPOINT (temporary save).
+
+- Advantages : Data Security, Data Integration, Data Abstraction, Data Sharing, Data Consistency and Accuracy, Data Organisation, Data Redundancy, Data Concurrency, Scabale and Flexible, Cost Effectiveness.
+- Disadvantages: complexity, performance overhead, scalability limits, high costs, Data Isolation, Compatability.
+- Application of DBMS : HR Management, Security, Banking, Ecommerce Website, Library Mgmt System, Healthcare etc...
+
+-> Types of DBMSs: relational (RDBMS), object-oriented (OODBMS), NoSQL.
+
+-> Two important characteristics of DBMSs are "data independence", which guarantees that modifications to data structures do not impact application layers, and "data abstraction", which makes database interactions simpler by shielding users from the complexity of data storage. Additionally, it provides concurrency control, which permits several users to access data concurrently and peacefully.
+
+->[IMPORTANT] : ARCHITECTURE: 1-Tier Architecture, 2-Tier Architecture, 3-Tier Architecture https://www.geeksforgeeks.org/dbms-architecture-2-level-3-level/?ref=next_article
+
+-> ER MODEL : The Entity Relational Model is a model for identifying entities to be represented in the database and representation of how those entities are related and represents overall logical structure of a db graphically.
+- Uses : require no technical knowledge and no hardware support, gives a standard solution for visualizing the data logically, very easy to understand and easy to create even for a naive user, making them easy to convert into relations (tables).
+
+- Symbol used in ER Diagram : https://media.geeksforgeeks.org/wp-content/uploads/20230428115454/Introduction-to-ER-Model-2-768.webp
+
+- Components of ER Diagram : https://media.geeksforgeeks.org/wp-content/uploads/20230428090323/Introduction-to-ER-Model-1-768.webp
+
+- An Entity may be an object with a physical existence and a set of all entities is called an entity set. 
+-> Types of Entity : 
+1. Strong Entity : A strong entity is not dependent on any other entity in the schema. A strong entity will always have a primary key. Strong entities are represented by a single rectangle.
+2. Weak Entity :A weak entity is dependent on a strong entity to ensure its existence and does not have any primary key. It instead has a partial discriminator key, represented by a double rectangle. 
+
+- Attributes are the properties that define the entity type.
+Types of Attributes :
+1. Key Attribute : uniquely identif.ies each entity in the entity set.
+2. Composite Attribute : composed of many other attributes.
+3. Multivalued Attribute: consisting of more than one value for a given entity.
+4. Derived Attribute: derived from other attributes of the entity type. 
+[pictorial represntation at : https://www.geeksforgeeks.org/introduction-of-er-model/?ref=next_article]
+
+- The number of different entity sets participating in a relationship set is called the degree of a relationship set.
+1. Unary Relationship: When there is only ONE entity set participating.
+2. Binary Relationship: When there are TWO entities set participating.
+3. Ternary Relationship: When there are three entity sets participating.
+4. N-ary Relationship: When there are n entities set participating.
+
+-The number of times an entity of an entity set participates in a relationship set is known as cardinality.
+Types :
+1. One-to-One 2. One-to-Many 3. Many-to-One 4. Many-to-Many
+
+- Participation Constraint is applied to the entity participating in the relationship set.
+1. Total Participation – Each entity in the entity set must participate in the relationship. If each student must enroll in a course, the participation of students will be total. Total participation is shown by a double line in the ER diagram.
+2. Partial Participation – The entity in the entity set may or may NOT participate in the relationship. If some courses are not enrolled by any of the students, the participation in the course will be partial.
+
+- Generalization : process of extracting common properties from a set of entities and creating a generalized entity from it & bottom-up approach.
+
+- Specialization : an entity is divided into sub-entities based on its characteristics & top-down approach
+
+- Aggregration : to express relationship among relationship, is an abstraction through which where relatiosnhips are treated as entites.
+
+- A relationship between two entities of a similar entity type is called a recursive relationship.
