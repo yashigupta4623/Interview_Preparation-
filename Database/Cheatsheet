@@ -64,3 +64,127 @@ Types :
 - Aggregration : to express relationship among relationship, is an abstraction through which where relatiosnhips are treated as entites.
 
 - A relationship between two entities of a similar entity type is called a recursive relationship.
+
+-> Key elements of a relational database:
+1. Relations - Table
+2. Rows - Tuples
+3. Columns - Attribute
+
+- Primary Key: It is a unique identifier of each relation so that no two rows are identical.
+
+- > Relational Algebra
+It is a procedural Language. It consists of a set of operators that can be performed on relations. 
+Relational algebra has mainly 9 types of operators.
+UNION, INTERSECTION, MINUS, TIMES, SELECTION, PROJECTION, JOIN, DIVISION, RENAME
+
+- Tables/Relations: The basic building block of the relational model is the table or relation, which represents a collection of related data.
+
+- Normalization: The process of organizing data into tables and eliminating redundancy is known as normalization.
+
+- Codd’s Rules: Codd’s Rules are a set of 12 rules that define the characteristics of a true relational DBMS. These rules ensure that the DBMS is consistent, reliable, and easy to use.
+
+- Atomicity, Consistency, Isolation, Durability (ACID): The ACID properties are a set of properties that ensure that transactions are processed reliably in the relational model. Transactions are sets of operations that are executed as a single unit, ensuring that data is consistent and accurate.
+
+- TYPES OF KEYS[IMPORTANT]
+1. Candidate key: minimal set of attributes that can uniquely identify a tuple &  can be simple (having only one attribute) or composite as well.
+2. Primary Key
+3. Super Key : set of attributes that can uniquely identify a tuple, group of single or multiple keys that identifies rows in a table. It supports NULL values. 
+"A candidate key is a super key but vice versa is not true."
+
+primary inside candidate inside Super [IMPORTANT]
+
+4. Alernate Key : keys other than primary keys, often called secondary keys.
+5. Foreign Key
+6. Composite Key :combination of two or more columns/attributes can be used. 
+
+- Anomalies in Relational Model : refer to inconsistencies or errors that can arise when working with relational databases, specifically in the context of data insertion, deletion, and modification.
+
+These anomalies can be categorized into three types:
+- Insertion Anomalies
+- Deletion Anomalies
+- Update Anomalies.
+
+-> Anomalies can be removed with the process of Normalization, which generally splits the database which results in reducing the anomalies in the database.
+
+-> Removal of Anomalies : By reducing data redundancy and ensuring data integrity, normalization helps to eliminate anomalies and improve the overall quality of the database. 
+- According to E.F.Codd, the goals of Normalization include:
+
+It helps in vacatingall the repeated data from the database.
+It helps in removing undesirable deletion, insertion, and update anomalies.
+It helps in making a proper and useful relationship between tables.  
+
+Advantages -: Scability, Flexibilty, Security, Data Integrity.
+Disadvantages -: Redundancy, Complexity, Performance, Incapacity to managed unstructed data.
+
+Strategies for Schema Design -> Top-Down Strategy 2. Bottom-Up Strategy 3. Inside-Out Strategy 4. Mixed Strategy.
+
+-> Features of Differnt Strategies for Schema Design :
+Normalization, De- normalization, Vertical Partitioning(split based on column), Horizontal Partitioning(based on Rows)
+
+-> A functional dependency A->B in a relation holds if two tuples having the same value of attribute A also have the same value for attribute.
+Types : 
+1. Trivial Functional Dependency 
+X -> Y is trivial only when Y is a subset of X. 
+2. Non Trivial Functional Dependencies 
+X -> Y is a non-trivial functional dependency when Y is not a subset of X. 
+X -> Y is called completely non-trivial when X intersect Y is NULL. 
+3. Semi Non Trivial Functional Dependencies 
+X -> Y is called semi non-trivial when X intersect Y is not NULL. 
+
+-> Canonical Cover : a set of functional dependencies that is equivalent to a given set of functional dependencies but is minimal in terms of the number of dependencies. 
+
+-> Normalization : Database normalization is the process of organizing the attributes of the database to reduce or eliminate data redundancy (having the same data but at different places). Data redundancy unnecessarily increases the size of the database as the same data is repeated in many places. Inconsistency problems also arise during insert, delete, and update operations. 
+It is an important process in database design that helps improve the database’s efficiency, consistency, and accuracy. It makes it easier to manage and maintain the data and ensures that the database is adaptable to changing business needs.
+Primary objective for normalizing the relations is to eliminate anomalies. 
+
+-> Features of Database Normalization :
+1. Elimination of Data Redundancy 
+2. Ensuring Data Consistency
+3. Simplification of Data Management
+4. Improved Database Design
+5. Avoiding Update Anomalies.
+6. Standardization
+
+Normals Forms in DBMS: 
+1. First Normal Form(1NF) : if every attribute in that relation is single-valued attribute. 
+2. Second NF :  is in First Normal Form and every non-primary-key attribute is fully functionally dependent on the primary key.
+3. 3NF : if there is no transitive dependency for non-prime attributes as well as it is in the second normal form. A relation is in 3NF if at least one of the following conditions holds in every non-trivial function dependency X –> Y.
+- X is a super key.
+- Y is a prime attribute (each element of Y is part of some candidate key).
+4. BCNF : 
+- The relation should be in the 3rd Normal Form.
+- X should be a superkey for every functional dependency (FD) X−>Y in a given relation. 
+5. 4NF : follow these - should be BCNF & table shouldn't have any multi-valued dependency.
+6. 5NF : if R should be already in 4NF & cannot be further non loss decomposed (join dependency).
+
+[IMPORTANT]
+When should I denormalize a database?
+for performance optimization.
+
+How does normalization impact database performance?
+improving data consistency and speed.  
+
+ADVANTAGES ->
+helps ensure that the database can scale.
+improves the overall data integrity.
+eliminates data redundancy.
+making it easier to maintain data accuracy.
+reducing the risk of data inconsistency.
+
+DISADVANTAGE ->
+slower query execution times.
+result in the loss of data context.
+increase the complexity. 
+
+File Organisation :
+- A file is named a collection of related information that is recorded on secondary storage such as magnetic disks/tapes etc. 
+
+- Some types of File Organizations are: 
+1. Sequential File Organization
+2. Heap File Organization
+3. Hash File Organization
+4. B+ Tree File Organization
+5. Clustered File Organization
+6. ISAM (Indexed Sequential Access Method)
+
+Often refer to https://www.geeksforgeeks.org/last-minute-notes-dbms/?ref=next_article[more information]
