@@ -176,6 +176,70 @@ slower query execution times.
 result in the loss of data context.
 increase the complexity. 
 
+-> Concurency : refers to the ability of the system to allow multiple transactions to access or modify the database simultaneously.
+
+- Concurrency Control in DBMS:  working concept that is required for controlling and managing the concurrent execution of database operations and thus avoiding the inconsistencies in the database. 
+
+-> Transactions access data using read and write operations. Transaction is a single operation of processing that can have many operations. Transaction is needed when more than one user wants to access same database. Transaction has ACID properties.
+
+ACID Properties in DBMS :
+A(Atomicity) : the entire transaction takes place at once or doesnt happen at all.
+C(Consistency) : the database must be consistent before and after the transaction.
+I(Isolation) : Multiple Transaction occur independently without interference.
+D(Durabaility) : the change of a successful transaction occurs even if the system failure occur.
+
+-> Properties of a Transaction : ACID
+
+- Advantage of Concurrency : Waiting Time(less due to Concurrency), Response Time(less due to Concurrency), Efficiency(more), Resource Utilization(more)
+
+- Disadvantages : Complexity, Deadlocks, Inconsistency
+
+Concurrency Control Problems :
+1. Dirty Read Problem(Write-Read Conflict)
+2. Lost Update Problem.
+
+Concurrency Control Protocols :
+1. Locked based concurrency control protocol
+- Two Locks : Shared/Read Lock and Exclusive/Write Lock
+- Two kinds : 2-phase Locking Protocol and Strict 2-phase Locking Protocol.
+2. Timestamp based concurrency control protocol
+
+Schedule : A schedule is a series of operations from one or more transactions.
+It is of Two Types:
+- Serial Schedule : When one transaction completely executes before starting another transaction & is always consistent &  has low throughput and less resource utilization.
+
+- Concurrent Schedule : When operations of a transaction are alternative/interleaved with operations of other transactions of a schedule, as in debit and credit transactions & is inconsisent.
+
+Differnce :
+SERIAL SCHEDULE :
+- tran one after other
+- less efficient.
+- only one tran occur at a time.
+- more time for execution.
+SERIALIZABLE SCHEDULE :
+- tran are executed concurrently.
+- more efficient.
+- multiple execution occur at a same time.
+- execution is faster.
+
+-> Recoverability is a property of database systems that ensures that, in the event of a failure or error, the system can recover the database to a consistent state. 
+Recovery is an essential feature in Database Management Systems (DBMS) because it ensures that data can be restored to a consistent and correct state in case of failures or errors.
+Why Recovery is Required in Database?
+1. System Failures
+2. Transaction Failures
+3. Human Errors
+4. Hardware Upgradation. 
+5. Data Corruption.
+
+- Starvation or Livelock is the situation when a transaction has to wait for an indefinite period of time to acquire a lock. 
+
+- The Deadlock is a condition in a multi-user database environment where transactions are unable to the complete because they are each waiting for the resources held by other transactions. This results in a cycle of the dependencies where no transaction can proceed.
+-> Characteristics of Deadlock
+- Mutual Exclusion: Only one transaction can hold a particular resource at a time.
+- Hold and Wait: The Transactions holding resources may request additional resources held by others.
+- No Preemption: The Resources cannot be forcibly taken from the transaction holding them.
+- Circular Wait: A cycle of transactions exists where each transaction is waiting for the resource held by the next transaction in the cycle.
+
 File Organisation :
 - A file is named a collection of related information that is recorded on secondary storage such as magnetic disks/tapes etc. 
 
