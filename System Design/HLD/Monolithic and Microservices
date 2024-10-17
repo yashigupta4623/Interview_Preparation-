@@ -1,0 +1,72 @@
+### Monolithic (Legacy) vs. Microservices Architecture
+
+**Monolithic Architecture:**
+- All components are integrated into a single application, which can make it challenging to scale and maintain.
+- **Disadvantages:**
+  - Overloads the IDE and makes it difficult to handle large codebases.
+  - Scaling (especially CI jobs) can be slow and complex.
+
+*Note:* The disadvantages of monolithic architecture become advantages when transitioning to microservices.
+
+---
+
+### Microservices Architecture
+
+- **Definition:** Microservices break down applications into independent services, each responsible for specific functions. These services are loosely coupled and can be deployed, scaled, and managed independently.
+  
+- **Disadvantages of Microservices:**
+  - Potential for latency issues due to inter-service communication.
+  - Complexity in monitoring and transaction management.
+  - Difficulties in ensuring each service is loosely coupled and autonomous.
+
+#### Microservices Development Phases:
+1. **Decomposition:** Dividing the application by subdomains or business capabilities.
+2. **Database Management:** Services can either have individual databases or share a database.
+3. **Communication:** Using APIs and events for interaction between services.
+4. **Integration:** Managing how services work together.
+5. **Observability & Monitoring:** Ensuring each service is observable and monitoring its performance.
+
+---
+
+### Decomposition Patterns for Microservices
+
+1. **Business Capability-Based Decomposition:** Services are divided based on high-level business functions, e.g., Order Management, Product Management, Account Management, etc.
+   - **Challenges:** Requires in-depth business knowledge to understand the boundaries of each capability.
+
+2. **Domain-Driven Design (DDD):** Divides services by domains, where each domain (like Order Management or Billing) has further sub-division into microservices.
+   - **Strangler Pattern:** An important refactoring technique used to incrementally replace legacy monolithic systems with microservices.
+
+---
+
+### Database Patterns in Microservices
+
+1. **Individual Database per Service:**
+   - Each service manages its database, which simplifies scaling and autonomy but can make operations like joins more complex.
+
+2. **Shared Database:** 
+   - Multiple services access the same database, which simplifies querying but creates scaling and dependency challenges.
+   - **Challenges:**
+     - Scaling the entire database even if only one service requires more capacity.
+     - Potential conflicts if one service requires modifications that affect others.
+
+   - **SAGA Pattern:** A sequence of local transactions, useful for managing failures in a distributed system. Each service has its own database, which helps maintain transactional consistency.
+
+   - **SAGA Types:**
+     - **Choreography:** Services handle their transactions independently, with cyclic dependencies.
+     - **Orchestration:** An orchestrator manages the transaction sequence across services.
+
+---
+
+### CQRS (Command Query Responsibility Segregation) Pattern
+
+- **Definition:** Separates the write (Command - Create, Update, Delete) and read (Query) responsibilities.
+- **Benefits:** Simplifies complex queries by creating separate views for read and write operations. This enables a clean way to handle operations where queries often require joins.
+  - Uses events or database triggers to synchronize the data views with updates from other services.
+
+--- 
+
+**[Important Notes]:** 
+- **Strangler Pattern:** Use this pattern for gradually refactoring monolithic systems into microservices.
+- **SAGA Pattern:** Essential for managing failures in distributed services, maintaining consistency without compromising autonomy.
+- **CQRS Pattern:** Ideal for segregating read and write responsibilities, enhancing scalability and simplifying complex queries.
+
