@@ -6,6 +6,6 @@ Welcome to the **Interview Preparation** repository! This repository is designed
 
 Inside, you'll find organized notes and essential concepts for **Data Structures and Algorithms** and **Computer Fundamentals**. Each topic includes explanations, examples, and frequently asked interview questions to help you strengthen your understanding. This repository is ideal for quick revisions and focused study sessions.
 
-### Additional Resources
-
+### Additional 
+For Computer Fundamental, explore [here](https://www.geeksforgeeks.org/prepare-cs-core-subjects-for-placements/?ref=ml_lbp)
 To further supplement your DSA knowledge, explore LeetCode's Interview Crash Course [here](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/).
