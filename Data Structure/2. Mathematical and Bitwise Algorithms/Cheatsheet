@@ -1,0 +1,36 @@
+## **1. Mathematical Algorithms**
+
+Mathematical algorithms address problems related to mathematical concepts and are used in various fields such as computer graphics, numerical analysis, optimization, and cryptography.
+
+| **Algorithm**                     | **Description**                                                                                      |
+|-----------------------------------|------------------------------------------------------------------------------------------------------|
+| **GCD and LCM**                  | Find the greatest common divisor (GCD) and least common multiple (LCM) of two numbers.            |
+| **Prime Factorization**           | Decompose a number into its prime factors.                                                          |
+| **Fibonacci Numbers**             | Generate the Fibonacci sequence, where each number is the sum of the two preceding ones.           |
+| **Catalan Numbers**               | Count the number of valid expressions with a given number of pairs of parentheses.                  |
+| **Modular Arithmetic**            | Perform arithmetic operations on numbers modulo a given value.                                      |
+| **Euler Totient Function**        | Count the number of positive integers less than a given number that are relatively prime to it.     |
+| **nCr Computations**              | Calculate the binomial coefficient, representing the number of ways to choose r elements from a set of n elements. |
+| **Prime Numbers and Primality Tests** | Determine whether a given number is prime and efficiently find prime numbers.                     |
+| **Sieve Algorithms**              | Find all prime numbers up to a given limit using methods like the Sieve of Eratosthenes.           |
+
+- Practice problems on mathematical algorithms.
+
+---
+
+## **2. Bitwise Algorithms**
+
+Bitwise algorithms operate on individual bits of numbers, manipulating their binary representation to perform tasks such as bit manipulation, logical operations, and efficient computation.
+
+| **Topic**                 | **Description**                                                                                      |
+|---------------------------|------------------------------------------------------------------------------------------------------|
+| **Bit Shifting**          | Shifts bits to the left or right by a specified number of positions.                                 |
+| **Left Shift (<<)**       | Shifts bits to the left, effectively multiplying the number by 2.                                   |
+| **Right Shift (>>)**      | Shifts bits to the right, effectively dividing the number by 2.                                     |
+| **Extract Bits**          | Uses masks to extract specific bits from an integer.                                                |
+| **Setting Bits**          | Uses masks to set specific bits to 1 in an integer.                                                |
+| **Clearing Bits**         | Uses masks to set specific bits to 0 in an integer.                                                |
+| **Toggling Bits**         | Uses XOR (^) to toggle specific bits in an integer.                                                |
+| **Counting Set Bits**     | Counts the number of set bits (1s) in an integer, often using techniques like Brian Kernighan’s algorithm. |
+
+- Practical applications of bitwise algorithms in optimization and cryptography.
