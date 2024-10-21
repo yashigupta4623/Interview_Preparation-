@@ -1,0 +1,93 @@
+# Array Element Deletion in Python
+
+This repository demonstrates different ways to delete elements from an array in Python. We cover three primary methods: deleting from the beginning, deleting from the end, and deleting from a specific index. Each method uses the `pop()` function, which removes elements from a list.
+
+## Methods
+
+### 1. Delete an Element from the Beginning of the Array
+To remove the first element of the array, use the `pop(0)` method. This shifts all the subsequent elements to the left.
+
+```python
+def delete_from_beginning(arr):
+    """
+    Delete the first element from the list.
+
+    Parameters:
+    arr (list): The list from which the first element will be deleted.
+    """
+    if len(arr) > 0:
+        removed_element = arr.pop(0)
+        print(f"Element {removed_element} deleted from the beginning: {arr}")
+    else:
+        print("The list is empty!")
+
+# Example usage:
+my_list = [1, 2, 3, 4]
+delete_from_beginning(my_list)  # Output: Element 1 deleted from the beginning: [2, 3, 4]
+```
+
+### 2. Delete an Element from the End of the Array
+To remove the last element of the array, use the `pop()` method without any arguments. This operation does not require shifting any elements.
+
+```python
+def delete_from_end(arr):
+    """
+    Delete the last element from the list.
+
+    Parameters:
+    arr (list): The list from which the last element will be deleted.
+    """
+    if len(arr) > 0:
+        removed_element = arr.pop()
+        print(f"Element {removed_element} deleted from the end: {arr}")
+    else:
+        print("The list is empty!")
+
+# Example usage:
+my_list = [1, 2, 3, 4]
+delete_from_end(my_list)  # Output: Element 4 deleted from the end: [1, 2, 3]
+```
+
+### 3. Delete an Element from a Specific Index
+To delete an element at a specific index, use `pop(index)`. Ensure the index is within the valid range of the list.
+
+```python
+def delete_from_index(arr, index):
+    """
+    Delete an element from a specific index in the list.
+
+    Parameters:
+    arr (list): The list from which an element will be deleted.
+    index (int): The index of the element to be deleted.
+    """
+    if 0 <= index < len(arr):
+        removed_element = arr.pop(index)
+        print(f"Element {removed_element} deleted from index {index}: {arr}")
+    else:
+        print(f"Invalid index! Index must be between 0 and {len(arr) - 1}.")
+
+# Example usage:
+my_list = [1, 2, 3, 4]
+delete_from_index(my_list, 2)  # Output: Element 3 deleted from index 2: [1, 2, 4]
+```
+
+---
+
+## Time Complexities
+
+| Operation                  | Time Complexity |
+|----------------------------|-----------------|
+| **Delete from Beginning**   | O(n)            |
+| **Delete from End**         | O(1)            |
+| **Delete from Index**       | O(n) (worst case) |
+
+---
+
+## Explanation:
+
+- **Deleting from the beginning**: The `pop(0)` method removes the first element, and all subsequent elements are shifted left. This takes **O(n)** time since the array needs to shift all the elements.
+  
+- **Deleting from the end**: The `pop()` method without arguments removes the last element without needing to shift any elements. This takes constant **O(1)** time.
+
+- **Deleting from a specific index**: The `pop(index)` method removes the element at the specified index. If the element is near the end, this operation is efficient, but if it's at the beginning, the rest of the elements must shift, making the time complexity **O(n)** in the worst case.
+

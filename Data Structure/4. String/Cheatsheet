@@ -1,0 +1,192 @@
+## **String Operations Cheat Sheet**
+
+### **1. String Basics**
+A string in Python is a sequence of characters enclosed in single (`'`) or double (`"`) quotes.
+
+python
+s = "Hello, World!"
+- **Accessing Characters**: You can access individual characters using indexing.
+  s[0]   # Output: 'H'
+  s[-1]  # Output: '!'
+  
+
+### **2. String Slicing**
+Extract substrings using slice notation: `string[start:end:step]`.
+
+python
+s = "Hello, World!"
+print(s[0:5])   # Output: 'Hello'
+print(s[7:])    # Output: 'World!'
+print(s[::-1])  # Output: '!dlroW ,olleH' (Reversing the string)
+
+
+### **3. Common String Methods**
+- **len()**: Returns the length of the string.
+    len(s)  # Output: 13
+  
+- **upper() / lower()**: Converts a string to uppercase or lowercase.
+  s.upper()  # Output: 'HELLO, WORLD!'
+  
+- **strip()**: Removes leading and trailing spaces.
+  "  Hello  ".strip()  # Output: 'Hello'  
+
+- **split()**: Splits the string into a list of substrings based on a delimiter.
+  "a,b,c".split(',')  # Output: ['a', 'b', 'c']
+  
+- **join()**: Joins a list of strings into a single string using a delimiter.
+  ','.join(['a', 'b', 'c'])  # Output: 'a,b,c'
+
+- **find()**: Returns the first index where the substring is found, or `-1` if not found.
+  s.find('World')  # Output: 7
+
+- **replace()**: Replaces occurrences of a substring with another string.
+  s.replace("World", "Python")  # Output: 'Hello, Python!'
+
+### **4. String Immutability**
+Strings in Python are immutable, meaning you can't modify them directly. You need to create a new string if you want to change it.
+
+python
+s = "Hello"
+s[0] = "h"  # This will raise an error
+s = "h" + s[1:]  # Correct way to modify the string
+
+### **5. String Comparison**
+String comparisons use the usual comparison operators (`==`, `<`, `>`, etc.) and are done lexicographically.
+
+python
+s1 = "abc"
+s2 = "def"
+print(s1 < s2)  # Output: True ('abc' comes before 'def' lexicographically)
+
+### **6. Substring Search**
+- **in**: Checks if a substring exists within a string.
+  "Hello" in s  # Output: True
+
+- **count()**: Returns the number of occurrences of a substring.
+  s.count("l")  # Output: 3
+
+### **7. String Formatting**
+There are several ways to format strings in Python:
+
+- **f-strings (Python 3.6+)**: Embed expressions inside string literals using curly braces.
+  name = "Alice"
+  f"Hello, {name}!"  # Output: 'Hello, Alice!'
+
+- **format()**: Another way to insert variables into strings.
+  "Hello, {}!".format(name)  # Output: 'Hello, Alice!'
+
+### **8. String Palindrome Check**
+A palindrome is a string that reads the same forward and backward.
+
+def is_palindrome(s):
+    s = s.lower().replace(" ", "")  # Convert to lowercase and remove spaces
+    return s == s[::-1]
+
+# Example usage:
+is_palindrome("A man a plan a canal Panama")  # Output: True
+
+### **9. Anagram Check**
+An anagram is when two strings contain the same characters in different orders.
+
+def is_anagram(s1, s2):
+    return sorted(s1) == sorted(s2)
+
+# Example usage:
+is_anagram("listen", "silent")  # Output: True
+
+### **10. Longest Common Substring**
+To find the longest common substring between two strings, use dynamic programming.
+
+def longest_common_substring(s1, s2):
+    m, n = len(s1), len(s2)
+    dp = [[0] * (n+1) for _ in range(m+1)]
+    max_len = 0
+    end_pos = 0
+
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if s1[i-1] == s2[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+                if dp[i][j] > max_len:
+                    max_len = dp[i][j]
+                    end_pos = i
+
+    return s1[end_pos - max_len:end_pos]
+
+# Example usage:
+longest_common_substring("abcde", "abfce")  # Output: 'ab'
+
+### **11. Longest Palindromic Substring**
+Finding the longest palindromic substring can be done using dynamic programming or expanding around centers.
+
+def longest_palindromic_substring(s):
+    def expand_around_center(s, left, right):
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left+1:right]
+
+    longest = ""
+    for i in range(len(s)):
+        # Odd-length palindromes
+        odd_palindrome = expand_around_center(s, i, i)
+        # Even-length palindromes
+        even_palindrome = expand_around_center(s, i, i+1)
+        # Update the longest palindrome
+        longest = max(longest, odd_palindrome, even_palindrome, key=len)
+    return longest
+
+# Example usage:
+longest_palindromic_substring("babad")  # Output: 'bab'
+
+### **12. String to Integer Conversion (atoi)**
+Convert a string to an integer, handling edge cases like leading/trailing spaces, signs, and invalid input.
+
+def my_atoi(s):
+    s = s.strip()
+    if not s:
+        return 0
+    sign = 1
+    if s[0] in ['-', '+']:
+        sign = -1 if s[0] == '-' else 1
+        s = s[1:]
+    num = 0
+    for char in s:
+        if not char.isdigit():
+            break
+        num = num * 10 + int(char)
+    return max(min(sign * num, 2**31 - 1), -2**31)
+
+# Example usage:
+my_atoi("   -42")  # Output: -42
+
+### **13. String Compression**
+Compress repeated characters into a shortened format.
+
+def compress_string(s):
+    compressed = []
+    count = 1
+    for i in range(1, len(s)):
+        if s[i] == s[i-1]:
+            count += 1
+        else:
+            compressed.append(s[i-1] + str(count))
+            count = 1
+    compressed.append(s[-1] + str(count))
+    return ''.join(compressed) if len(compressed) < len(s) else s
+
+# Example usage:
+compress_string("aabcccccaaa")  # Output: 'a2b1c5a3'
+
+
+### **14. Time Complexity of Common String Operations**
+
+| Operation                 | Time Complexity |
+|---------------------------|-----------------|
+| Accessing a character     | O(1)            |
+| String concatenation      | O(n)            |
+| String slicing            | O(k) (k is slice length) |
+| Finding a substring       | O(n * m)        |
+| String reversal           | O(n)            |
+| String comparison         | O(n)            |
+
