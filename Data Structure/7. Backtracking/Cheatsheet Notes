@@ -1,0 +1,61 @@
+### Backtracking Algorithm - Concise Notes
+
+**Definition**:  
+**Backtracking** is an algorithmic technique for solving problems incrementally by trying out possible solutions and abandoning those that fail to satisfy the problem constraints. It explores all possibilities in a **depth-first search** manner.
+
+**Key Concept**:  
+Backtracking tries to build a solution one step at a time and removes those solutions that fail to satisfy the problem constraints (i.e., it "backtracks" by undoing the last step and trying another path).
+
+**Steps in Backtracking**:
+1. Start with an empty solution.
+2. Add a choice to the solution and check if it is valid.
+3. If it is valid and leads to a solution, proceed; otherwise, remove the choice (backtrack).
+4. Repeat until all possibilities are explored.
+
+**Framework**:
+1. **Choice**: Select an option.
+2. **Constraints**: Test if the current selection is valid.
+3. **Goal**: Determine if the current solution meets the problem's objective.
+
+**Time Complexity**:  
+Varies depending on the problem. Generally, the time complexity is **O(k^n)**, where `k` is the number of choices per step and `n` is the number of steps.
+
+---
+
+### Important Backtracking Algorithms
+
+1. **N-Queens Problem**:
+   - **Problem**: Place `n` queens on an `n x n` chessboard so that no two queens attack each other.
+   - **Approach**: Place queens row by row, ensuring no two queens are in the same column, row, or diagonal.
+
+2. **Sudoku Solver**:
+   - **Problem**: Fill a 9x9 Sudoku grid so that each row, column, and 3x3 subgrid contain all numbers from 1 to 9.
+   - **Approach**: Fill each empty cell and backtrack if any placement leads to an invalid solution.
+
+3. **Subset Sum Problem**:
+   - **Problem**: Determine if there is a subset of a set of numbers that adds up to a target sum.
+   - **Approach**: Include or exclude each element and backtrack if a combination doesn't lead to the target sum.
+
+4. **Permutations and Combinations**:
+   - **Problem**: Generate all possible permutations or combinations of a set of elements.
+   - **Approach**: Choose an element, recursively generate permutations for the rest, and backtrack.
+
+5. **Rat in a Maze**:
+   - **Problem**: Find a path for a rat to reach the end of a maze from the start, only moving in valid directions.
+   - **Approach**: Move in one direction and backtrack if the movement leads to a dead end.
+
+6. **Knight’s Tour**:
+   - **Problem**: Move a knight on a chessboard so that it visits every square exactly once.
+   - **Approach**: Try every possible knight move and backtrack if a valid tour isn’t found.
+
+7. **Hamiltonian Path and Cycle**:
+   - **Problem**: Find a path or cycle that visits each vertex in a graph exactly once.
+   - **Approach**: Explore each edge and backtrack if it leads to a repeated vertex or dead end.
+
+**Applications**:
+- Constraint satisfaction problems (Sudoku, N-Queens)
+- Puzzles (Crossword, Word Search)
+- Combinatorial optimization (Knapsack, Traveling Salesman)
+- Graph problems (Hamiltonian Path, Coloring)
+
+Backtracking provides an elegant brute-force solution to many constraint-based problems but may need optimization for efficiency, such as pruning unnecessary paths (branch-and-bound techniques).
