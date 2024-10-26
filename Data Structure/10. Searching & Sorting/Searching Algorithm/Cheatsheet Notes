@@ -1,0 +1,64 @@
+### Searching Algorithms Cheatsheet
+
+**1. Linear Search**  
+Linear Search examines each element in the list sequentially until the desired element is found or the list is exhausted. It’s simple but inefficient for large datasets.  
+- **Best Case:** O(1) (element found at the first position)  
+- **Average Case:** O(n)  
+- **Worst Case:** O(n) (element not found)  
+- **Space Complexity:** O(1)  
+- **Use Case:** Small or unsorted datasets.
+
+**2. Binary Search**  
+Binary Search is an efficient algorithm that finds the position of a target value within a sorted array by repeatedly dividing the search interval in half.  
+- **Best Case:** O(1) (element found at the mid-point)  
+- **Average Case:** O(log n)  
+- **Worst Case:** O(log n)  
+- **Space Complexity:** O(1) for iterative implementation; O(log n) for recursive implementation due to call stack.  
+- **Use Case:** Large, sorted datasets.
+
+**3. Jump Search**  
+Jump Search works by dividing the sorted array into blocks of a fixed size and jumping ahead by those block sizes to find the target element. Once a block where the target may exist is found, a linear search is performed within that block.  
+- **Best Case:** O(1) (element found in the first block)  
+- **Average Case:** O(√n)  
+- **Worst Case:** O(√n)  
+- **Space Complexity:** O(1)  
+- **Use Case:** Large, sorted datasets when the dataset is too large for a linear search but not too large for a jump search.
+
+**4. Interpolation Search**  
+Interpolation Search improves on binary search for uniformly distributed sorted arrays by estimating the position of the target value based on its value relative to the bounds.  
+- **Best Case:** O(1) (when the element is found at the estimated position)  
+- **Average Case:** O(log log n)  
+- **Worst Case:** O(n) (for non-uniformly distributed arrays)  
+- **Space Complexity:** O(1)  
+- **Use Case:** Large, uniformly distributed, sorted datasets.
+
+**5. Exponential Search**  
+Exponential Search is useful for unbounded or infinite lists. It first finds the range where the target element may be located using exponential growth, then applies binary search within that range.  
+- **Best Case:** O(1) (when the element is found at the first position)  
+- **Average Case:** O(log n)  
+- **Worst Case:** O(log n)  
+- **Space Complexity:** O(1)  
+- **Use Case:** Unbounded or infinite sorted datasets.
+
+**6. Fibonacci Search**  
+Fibonacci Search is similar to binary search but uses Fibonacci numbers to divide the array into sections. It’s effective for large datasets and can be more efficient than binary search in some scenarios.  
+- **Best Case:** O(1) (element found at the first position)  
+- **Average Case:** O(log n)  
+- **Worst Case:** O(log n)  
+- **Space Complexity:** O(1)  
+- **Use Case:** Large, sorted datasets where Fibonacci calculations can be advantageous.
+
+### Key Concepts
+
+- **Sorted vs. Unsorted**: Most efficient searching algorithms (like binary search) require sorted data.
+- **Time Complexity**: Understanding time complexity is crucial to selecting the right search algorithm for specific use cases.
+- **Space Complexity**: Consideration of additional space requirements is important, especially in constrained environments.
+
+### When to Use Each Algorithm
+
+- **Linear Search**: Use when dealing with small or unsorted datasets where simplicity is preferred.
+- **Binary Search**: Ideal for large, sorted datasets due to its efficiency.
+- **Jump Search**: Useful for large sorted datasets where a binary search might be too slow.
+- **Interpolation Search**: Best for large datasets that are uniformly distributed.
+- **Exponential Search**: Suitable for unbounded or infinite lists where the size is unknown.
+- **Fibonacci Search**: Effective for large sorted datasets where Fibonacci properties provide a computational advantage.
