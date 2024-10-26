@@ -1,0 +1,86 @@
+### Sorting Algorithms Cheatsheet
+
+**1. Bubble Sort**  
+Bubble Sort repeatedly steps through the list, comparing adjacent elements and swapping them if they are in the wrong order.  
+- **Best Case:** O(n)  
+- **Average Case:** O(n²)  
+- **Worst Case:** O(n²)  
+- **Space Complexity:** O(1)  
+- **Stability:** Yes  
+
+**2. Selection Sort**  
+Selection Sort divides the input into a sorted and an unsorted region, repeatedly selecting the smallest (or largest) element from the unsorted region to append to the sorted region.  
+- **Best Case:** O(n²)  
+- **Average Case:** O(n²)  
+- **Worst Case:** O(n²)  
+- **Space Complexity:** O(1)  
+- **Stability:** No  
+
+**3. Insertion Sort**  
+Insertion Sort builds a sorted array one element at a time by repeatedly picking the next element and inserting it into the correct position.  
+- **Best Case:** O(n)  
+- **Average Case:** O(n²)  
+- **Worst Case:** O(n²)  
+- **Space Complexity:** O(1)  
+- **Stability:** Yes  
+
+**4. Merge Sort**  
+Merge Sort divides the array into halves, recursively sorts them, and then merges the sorted halves. It’s efficient and works well for large datasets.  
+- **Best Case:** O(n log n)  
+- **Average Case:** O(n log n)  
+- **Worst Case:** O(n log n)  
+- **Space Complexity:** O(n)  
+- **Stability:** Yes  
+
+**5. Quick Sort**  
+Quick Sort selects a 'pivot' element, partitions the array around the pivot, and recursively sorts the partitions. It’s generally faster for larger datasets.  
+- **Best Case:** O(n log n)  
+- **Average Case:** O(n log n)  
+- **Worst Case:** O(n²)  
+- **Space Complexity:** O(log n)  
+- **Stability:** No  
+
+**6. Heap Sort**  
+Heap Sort builds a max-heap from the input data, then repeatedly extracts the maximum element to create a sorted array. It guarantees O(n log n) performance.  
+- **Best Case:** O(n log n)  
+- **Average Case:** O(n log n)  
+- **Worst Case:** O(n log n)  
+- **Space Complexity:** O(1)  
+- **Stability:** No  
+
+**7. Counting Sort**  
+Counting Sort counts the number of occurrences of each unique value in the input, then calculates positions for each value based on the counts. It’s efficient for sorting integers.  
+- **Best Case:** O(n + k)  
+- **Average Case:** O(n + k)  
+- **Worst Case:** O(n + k)  
+- **Space Complexity:** O(k)  
+- **Stability:** Yes  
+
+**8. Radix Sort**  
+Radix Sort sorts numbers by processing individual digits, using a stable sub-sorting algorithm (like Counting Sort) for each digit.  
+- **Best Case:** O(nk)  
+- **Average Case:** O(nk)  
+- **Worst Case:** O(nk)  
+- **Space Complexity:** O(n + k)  
+- **Stability:** Yes  
+
+**9. Bucket Sort**  
+Bucket Sort distributes elements into a number of buckets, sorts each bucket individually (often using another sorting algorithm), and then concatenates the buckets.  
+- **Best Case:** O(n + k)  
+- **Average Case:** O(n)  
+- **Worst Case:** O(n²)  
+- **Space Complexity:** O(n)  
+- **Stability:** Yes  
+
+### Key Concepts
+
+- **Stable Sort**: A sorting algorithm is stable if it maintains the relative order of records with equal keys (values).
+- **In-Place Sort**: A sorting algorithm is in-place if it requires a small, constant amount of additional memory space for execution.
+
+### When to Use Each Algorithm
+
+- **Bubble Sort, Selection Sort, Insertion Sort**: Best for small datasets or educational purposes due to their simplicity.
+- **Merge Sort**: Ideal for large datasets and linked lists; it’s stable and predictable.
+- **Quick Sort**: Generally faster on average for larger datasets but can have a worst-case scenario that can be improved with randomization.
+- **Heap Sort**: Useful when memory usage is a concern; it’s not stable but guarantees O(n log n) performance.
+- **Counting Sort, Radix Sort, Bucket Sort**: Efficient for sorting integers or small ranges of numbers; best for specific conditions where elements have limited range or are integers.
