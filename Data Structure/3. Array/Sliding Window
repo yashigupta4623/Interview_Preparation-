@@ -1,0 +1,54 @@
+### Sliding Window Algorithm
+
+#### Definition
+The Sliding Window Algorithm is a powerful technique for problems involving contiguous subarrays in a given array or list. It involves creating a window that "slides" across the array to evaluate specific subarrays without recomputing results for overlapping elements, making it highly efficient.
+
+#### Why Use Sliding Window?
+This approach optimizes the process of finding a solution in **O(n)** time complexity by avoiding repetitive calculations that a nested loop (brute force) approach would need. It reduces unnecessary operations and is suitable for problems where:
+- We need to find maximum or minimum subarray sums.
+- We require subarrays of fixed or variable lengths.
+- A contiguous subarray must satisfy certain conditions (like sum, average, product, etc.).
+
+### Types of Sliding Windows
+
+1. **Fixed Size Sliding Window**: The window has a fixed length.
+   - **Common Problems**: Maximum sum subarray of a given size \(k\), number of elements meeting specific criteria in a subarray of size \(k\), etc.
+
+   - **Example**: For an array `[1, 3, -1, -3, 5, 3, 6, 7]` and \(k = 3\), calculate the maximum sum of each subarray of size 3. 
+
+2. **Variable Size Sliding Window**: The window size can change based on conditions.
+   - **Common Problems**: Smallest subarray with a sum greater than a given value, longest subarray with at most \(k\) distinct elements, etc.
+
+   - **Example**: Find the smallest subarray in `[2, 1, 5, 2, 3, 2]` with a sum greater than or equal to 7.
+
+### How Sliding Window Works
+
+1. **Initialization**: Start with the first element in the window and initialize any necessary variables (sum, max, count, etc.).
+
+2. **Expansion and Shrinking**:
+   - **Expand the Window**: Add the next element in the array to the window.
+   - **Slide the Window**: When the window reaches the desired condition or length, slide it by removing the element at the start of the window and adding the next one.
+   - For a variable window size, expand until the condition is met, then shrink from the left as long as the condition holds.
+
+3. **Efficiently Update Window State**:
+   - Maintain cumulative values (like sums) by adding the new element and subtracting the element being removed from the window.
+   - Avoid recomputation of the entire subarray each time the window slides.
+
+### Complexity
+- **Time Complexity**: O(n), where \(n\) is the length of the array, since each element is processed once.
+- **Space Complexity**: O(1) if only variables are stored; O(k) for data structures like queues or deques in specific implementations.
+
+### Example Problem: Maximum Sum of Subarray of Size K
+```python
+def max_sum_subarray(arr, k):
+    max_sum, current_sum = 0, sum(arr[:k])
+    max_sum = current_sum
+
+    for i in range(k, len(arr)):
+        current_sum += arr[i] - arr[i - k]  # Slide the window
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum
+```
+
+The Sliding Window Algorithm provides a concise and efficient approach for contiguous subarray problems, especially those involving sums or specific conditions. Using this technique can significantly reduce computational overhead compared to brute-force methods.
