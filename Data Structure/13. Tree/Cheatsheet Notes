@@ -1,0 +1,80 @@
+### Trees in Data Structures
+
+**Definition:**
+- A tree is a **non-linear hierarchical data structure** consisting of nodes connected by edges, with a top node called the **root** and nodes having **child nodes**.
+
+**Purpose:**
+- Used in computer science for **efficient data organization**, facilitating quick data retrieval, insertion, and deletion.
+
+---
+
+### Tree Terminology
+
+- **Node:** Basic unit of a tree containing data and references to its children.
+- **Edge:** Connection between two nodes.
+- **Leaf Node:** A node with no children.
+- **Height of a Tree:** The length of the longest path from the root to a leaf.
+- **Depth of a Node:** The length of the path from the root to that node.
+
+---
+
+### Tree Traversal Methods
+Traversal methods are used to visit and process nodes in a tree:
+
+1. **In-Order Traversal:** 
+   - Visit left subtree, current node, then right subtree. 
+   - **Used in:** Binary Search Trees to retrieve data in sorted order.
+
+2. **Pre-Order Traversal:** 
+   - Visit current node, left subtree, then right subtree. 
+   - **Used in:** Creating a copy of the tree or for prefix expression evaluation.
+
+3. **Post-Order Traversal:** 
+   - Visit left subtree, right subtree, then current node. 
+   - **Used in:** Deleting the tree or for postfix expression evaluation.
+
+4. **Level-Order Traversal:** 
+   - Visit nodes level by level from top to bottom.
+   - **Used in:** Breadth-First Search (BFS) algorithms.
+
+---
+
+### Classifications of Trees
+Trees can be classified based on various characteristics:
+
+| **Classification**       | **Description**                                          |
+|--------------------------|----------------------------------------------------------|
+| **By Degree**            | Maximum number of children each node can have.           |
+| Binary Tree              | Each node has at most **two children**.                  |
+| Ternary Tree             | Each node has at most **three children**.                |
+| N-ary Tree               | Each node has at most **N children**.                    |
+| **By Ordering**          | Based on the ordering of nodes and subtrees.             |
+| Binary Search Tree (BST) | Left child < parent < right child for every node.        |
+| AVL Tree                 | A self-balancing BST where the height difference between left and right subtrees is at most one. |
+| Red-Black Tree           | A balanced binary search tree with an additional property of color-coded nodes to maintain balance. |
+| Heap                     | Specialized binary tree with the **heap property**; can be a max-heap or min-heap. |
+| **By Balance**           | Based on how well-balanced the tree is.                  |
+| Balanced Tree            | Subtree heights differ by at most one (e.g., AVL trees). |
+| Unbalanced Tree          | Subtree heights can differ significantly, affecting performance. |
+
+---
+
+### Applications of Trees
+- **File Systems:** Represent hierarchical file storage and organization.
+- **Databases:** Use B-trees and B+ trees for indexing and efficient data retrieval.
+- **XML Documents:** Represent the structure of XML data, allowing for efficient parsing and querying.
+- **Artificial Intelligence:** Used in decision trees for making decisions based on attributes, and in search algorithms.
+- **Routing Algorithms:** Used in network routing protocols to find optimal paths.
+- **Expression Parsing:** Used in compilers and interpreters to parse and evaluate mathematical expressions.
+
+---
+
+### Advantages of Trees
+- **Hierarchical Structure:** Naturally represents hierarchical relationships.
+- **Dynamic Size:** Can grow and shrink as needed.
+- **Efficient Operations:** Provides efficient searching, insertion, and deletion operations, especially in balanced trees.
+
+### Disadvantages of Trees
+- **Complexity:** More complex to implement than linear data structures.
+- **Memory Usage:** Can consume more memory due to pointers/edges connecting nodes.
+- **Unbalanced Trees:** Can degrade performance if not balanced.
