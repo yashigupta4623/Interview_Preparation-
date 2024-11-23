@@ -8,4 +8,5 @@ Inside, you'll find organized notes and essential concepts for **Data Structures
 
 ### Additional 
 For Computer Fundamental, explore [here](https://www.geeksforgeeks.org/prepare-cs-core-subjects-for-placements/?ref=ml_lbp)
+- DBMS : [here](https://youtu.be/dl00fOOYLOM?si=ND40tynF23HQ4Yat)
 To further supplement your DSA knowledge, explore LeetCode's Interview Crash Course [here](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/).
