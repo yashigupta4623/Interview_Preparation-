@@ -1,0 +1,133 @@
+'''
+-> BFS (Breadth-First Search):
+
+Explores level by level.
+Finds the shortest path in an unweighted graph.
+Uses a queue.
+Time complexity: O(V+E).
+
+-> DFS (Depth-First Search):
+
+Explores depth first (one branch at a time).
+Does not guarantee the shortest path.
+Uses a stack (or recursion).
+Time complexity: 𝑂(𝑉+𝐸)
+
+'''
+
+'''
+Aspect	                           BFS	                                            DFS
+Traversal Type -	Level by level (breadth-first)      	                Depth by depth (depth-first).
+Shortest Path  -    Always finds the shortest path in unweighted graph   	Does not guarantee the shortest path.
+Backtracking   -	No backtracking (relies on queue)                       Extensive backtracking (relies on stack).
+Efficiency in  -    Shortest Path	Best for unweighted graphs              May explore unnecessarily deep paths first.
+
+'''
+
+# bfs 
+from collections import deque
+    
+class Graph:
+    def __init__(self):
+        self.graph = {}
+    
+    def add_edge(self,u,v,directed =False):
+        if u not in self.graph:
+            self.graph[u] = []
+        if v not in self.graph:
+            self.graph[v] = []
+        self.graph[u].append(v)
+        if not directed:
+            self.graph[v].append(u)
+    
+    def bfs(self, start):
+        visited = set()
+        queue = deque([start])
+        tranversal = []
+        
+        visited.add(start)
+        
+        while queue:
+            curr = queue.popleft()
+            tranversal.append(curr)
+            
+            for neig in self.graph[curr]:
+                if neig not in visited:
+                    visited.add(neig)
+                    queue.append(neig)
+        return tranversal
+            
+    def display(self):
+        for v,e in self.graph.items():
+            print(f"{v}->{','.join(map(str, e))}")
+            
+# Create the graph
+graph = Graph()
+graph.add_edge(0, 1)
+graph.add_edge(0, 2)
+graph.add_edge(1, 3)
+graph.add_edge(1, 4)
+graph.add_edge(2, 5)
+graph.add_edge(3, 6)
+graph.add_edge(4, 6)
+graph.add_edge(5, 6)
+
+# Display the adjacency list
+graph.display()
+
+# Perform BFS traversal
+start_vertex = 0
+print("\nBFS Traversal:", graph.bfs(start_vertex))
+
+
+
+# dfs 
+
+class Graph:
+    def __init__(self):
+        self.graph = {}
+    
+    def add_edge(self,u,v,directed =False):
+        if u not in self.graph:
+            self.graph[u] = []
+        if v not in self.graph:
+            self.graph[v] = []
+        self.graph[u].append(v)
+        if not directed:
+            self.graph[v].append(u)
+    
+    def dfs(self, start):
+        visited = set()
+        tranversal = []
+        self.dfsRecursive(start, visited, tranversal)
+        return tranversal
+    
+    def dfsRecursive(self, curr, visited, tranversal):
+        tranversal.append(curr)
+        visited.add(curr)
+        
+        for neig in self.graph[curr]:
+            if neig not in visited:
+                self.dfsRecursive(neig, visited, tranversal)
+            
+    def display(self):
+        for v,e in self.graph.items():
+            print(f"{v}->{','.join(map(str, e))}")
+            
+# Create the graph
+graph = Graph()
+graph.add_edge(0, 1)
+graph.add_edge(0, 2)
+graph.add_edge(1, 3)
+graph.add_edge(1, 4)
+graph.add_edge(2, 5)
+graph.add_edge(3, 6)
+graph.add_edge(4, 6)
+graph.add_edge(5, 6)
+
+# Display the adjacency list
+graph.display()
+
+# Perform DFS traversal
+start_vertex = 0
+print("\nDFS Traversal:", graph.dfs(start_vertex))
