@@ -1,0 +1,87 @@
+# Implementation of Graph
+
+'''Undirected Graph Implementation : In this, edges have no direction so an edge btw A & B means both A is connected to B & B is also connected to A.
+'''
+
+class UnidirectedGraph:
+    def __init__(self):
+        self.graph = {}
+    
+    def add_vertex(self, vertex):
+        if vertex not in self.graph:
+            self.graph[vertex] = []
+    
+    def add_edge(self, ver1, ver2):
+        if ver1 not in self.graph:
+            self.add_vertex(ver1)
+        if ver2 not in self.graph:
+            self.add_vertex(ver2)
+        self.graph[ver1].append(ver2)
+        self.graph[ver2].append(ver1)
+    
+    def display(self):
+        for v,e in self.graph.items():
+            print(f"{v}->{','.join(map(str, e))}")
+            
+obj = UnidirectedGraph()
+obj.add_edge("A", "B")
+obj.add_edge("A", "C")
+obj.add_edge("B", "C")
+obj.add_edge("D", "C")
+obj.display()
+
+
+'''Directed Graph Implementation : In this, edges have direction so an edge btw A & B means both A is connected to B only.
+'''
+
+class DirectedGraph:
+    def __init__(self):
+        self.graph = {}
+    
+    def add_vertex(self, vertex):
+        if vertex not in self.graph:
+            self.graph[vertex] = []
+    
+    def add_edge(self, ver1, ver2):
+        if ver1 not in self.graph:
+            self.add_vertex(ver1)
+        if ver2 not in self.graph:
+            self.add_vertex(ver2)
+        self.graph[ver1].append(ver2)
+    
+    def display(self):
+        for v,e in self.graph.items():
+            print(f"{v}->{','.join(map(str, e))}")
+            
+obj = UnidirectedGraph()
+obj.add_edge("A", "B")
+obj.add_edge("A", "C")
+obj.add_edge("B","D")
+obj.add_edge("D", "C")
+obj.display()
+
+'''Adjacency Matrix Implementation: It is a 2D array where each cell (i,j) represents whether there is an edge from vertex i to vertex j.
+'''
+
+class AdjacencyMatrixGraph:
+    def __init__(self, num_vertices):
+        self.num_vertices = num_vertices
+        # intialise a matrix with zero
+        self.matrix = [[0]*num_vertices for _ in range(num_vertices)]
+        
+    def add_edge(self, u,v, weight = 1, directed = False):
+        self.matrix[u][v] = weight
+        if not directed :
+            self.matrix[v][u] = weight
+            
+    def display(self):
+        print("Adjancency Matrix : ")
+        for r in self.matrix:
+            print(" ".join(map(str, r)))
+            
+obj = AdjacencyMatrixGraph(4)
+obj.add_edge(0,1)
+obj.add_edge(0,2, directed = True)
+obj.add_edge(1,3)
+obj.add_edge(2,3)
+obj.display()

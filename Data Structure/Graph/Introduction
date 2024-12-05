@@ -1,0 +1,24 @@
+- What is a graph? 
+A graph is a data structure used to represent relationships between objects. It consists of nodes (vertices) and edges connecting these nodes.
+
+-Types of graphs:
+-> Directed: Edges have a direction (e.g., one-way street).
+-> Undirected: Edges have no direction (e.g., a two-way street).
+-> Weighted: Edges have associated weights or costs.
+-> Unweighted: Edges have no associated weights.
+-> Cyclic: Contains cycles (paths that start and end at the same node).
+-> Acyclic: Contains no cycles.
+
+- Graph representations:
+Adjacency matrix: A 2D matrix where the rows and columns represent nodes, and the values represent the existence or weight of an edge.
+Adjacency list: An array of lists where each index represents a node, and the list at that index contains the nodes connected to it.
+
+- Graph Traversals
+-> Depth-first search (DFS): A traversal algorithm that explores as far as possible along each branch before backtracking.
+-> Breadth-first search (BFS): A traversal algorithm that explores all the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.   
+
+- Applications of Graphs
+-> Social networks: Representing relationships between people.
+-> Maps and routing: Representing roads and finding shortest paths.
+-> Circuit design: Representing electronic circuits.
+-> Scheduling problems: Representing tasks and dependencies.
