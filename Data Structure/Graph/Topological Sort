@@ -1,0 +1,191 @@
+### **Topological Sort in Graphs**
+
+---
+
+#### **What is Topological Sort?**  
+Topological Sort is a linear ordering of the vertices of a Directed Acyclic Graph (DAG) such that for every directed edge 𝑢 → 𝑣, vertex 𝑢 appears before vertex 𝑣 in the ordering.
+It is widely used in scenarios where tasks must be performed in a sequence respecting dependencies.
+
+---
+
+#### **Why Only DAGs Have Topological Sort?**  
+1. **No Cycles**:  
+   - In a cyclic graph, it is impossible to create a valid linear ordering because dependencies loop back on themselves.  
+   - Example: In a cycle A→B→C→A, there’s no way to determine which vertex comes first.  
+   
+2. **Directed Acyclic Graph (DAG)**:  
+   - By definition, a DAG does not have cycles, ensuring all dependencies can be resolved in a sequential manner.
+
+---
+
+#### **Example**  
+
+**Graph Structure**:  
+Vertices: [0, 1, 2, 3] 
+Edges:  
+- 0 → 1
+- 0 → 2
+- 1 → 3
+- 2 → 3
+
+
+**Graph Representation**:  
+0 → 1
+↓    ↓
+2 → 3
+
+**Topological Order**:  
+A valid topological order for this graph is [0, 1, 2, 3].  
+
+---
+
+#### **Python Code for Topological Sort (Using DFS)**  
+
+def topological_sort_dfs(graph):
+    """
+    Perform topological sort on a DAG using DFS.
+    
+    :param graph: Adjacency list representation of the graph.
+    :return: A list representing the topological order.
+    """
+    visited = set()
+    stack = []
+
+    def dfs(node):
+        if node in visited:
+            return
+        visited.add(node)
+        for neighbor in graph.get(node, []):
+            dfs(neighbor)
+        stack.append(node)
+
+    # Perform DFS for each unvisited node
+    for vertex in graph:
+        if vertex not in visited:
+            dfs(vertex)
+
+    # Return the reversed stack as the topological order
+    return stack[::-1]
+
+
+# Example Graph
+graph = {
+    0: [1, 2],
+    1: [3],
+    2: [3],
+    3: []
+}
+
+# Compute Topological Sort
+topological_order = topological_sort_dfs(graph)
+print("Topological Order:", topological_order)
+
+#### **Output**  
+Topological Order: [0, 2, 1, 3]
+---
+
+# Kahn's Algorithm :
+
+### **Kahn's Algorithm for Topological Sorting**  
+
+Kahn's Algorithm is a **BFS-based approach** for finding the topological order of a **Directed Acyclic Graph (DAG)**.  
+
+---
+
+### **Steps of Kahn's Algorithm**  
+
+1. **Calculate In-Degree**:  
+   - Compute the in-degree (number of incoming edges) for each vertex in the graph.  
+
+2. **Initialize a Queue**:  
+   - Add all vertices with in-degree 0 (nodes with no dependencies) to a queue.  
+
+3. **Process Nodes**:  
+   - While the queue is not empty:  
+     a. Remove a node from the queue and add it to the topological order.  
+     b. For each neighbor of the current node:  
+       - Decrease its in-degree by 1.  
+       - If the in-degree of a neighbor becomes 0, add it to the queue.  
+
+4. **Check for Cycles**:  
+   - If the topological order contains fewer nodes than the graph, a cycle exists, and topological sorting is not possible.  
+
+---
+
+### **Python Code for Kahn's Algorithm**  
+
+```python
+from collections import deque
+
+def kahns_topological_sort(graph, num_vertices):
+    # Step 1: Calculate in-degrees
+    in_degree = [0] * num_vertices
+    for u in graph:
+        for v in graph[u]:
+            in_degree[v] += 1
+
+    # Step 2: Initialize queue with nodes having in-degree 0
+    queue = deque([i for i in range(num_vertices) if in_degree[i] == 0])
+    topological_order = []
+
+    # Step 3: Process the queue
+    while queue:
+        node = queue.popleft()
+        topological_order.append(node)
+
+        for neighbor in graph.get(node, []):
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+
+    # Step 4: Check for cycle
+    if len(topological_order) != num_vertices:
+        return "Cycle detected! Topological sort not possible."
+
+    return topological_order
+
+# Example Usage
+graph = {
+    0: [1, 2],
+    1: [3],
+    2: [3],
+    3: []
+}
+num_vertices = 4
+
+print("Topological Order:", kahns_topological_sort(graph, num_vertices))
+
+```
+
+### **Output**  
+```
+Topological Order: [0, 2, 1, 3]
+```
+
+---
+
+### **Advantages of Kahn's Algorithm**  
+1. **Cycle Detection**: Identifies if a cycle exists in the graph.  
+2. **Efficiency**: Runs in \( O(V + E) \), where \( V \) is the number of vertices and \( E \) is the number of edges.  
+3. **Iterative Process**: Suitable for practical applications requiring iterative dependency resolution.  
+
+---
+
+BFS - directly detects the cycle
+DFS - NO explicit detection mechanism
+
+---
+
+### **Applications of Kahn’s Algorithm**  
+- Dependency resolution in **package management systems**.  
+- Determining task order in **project planning tools**.  
+- Course prerequisite planning in **academic settings**.
+
+---------------
+
+#### **Applications of Topological Sort**  
+1. **Task Scheduling**: Determine the order in which tasks should be performed.  
+2. **Build Systems**: Resolve dependencies in build scripts.  
+3. **Course Prerequisites**: Plan a course sequence based on prerequisites.  
+4. **Dependency Resolution**: Software package managers use it to resolve dependencies.  
+
