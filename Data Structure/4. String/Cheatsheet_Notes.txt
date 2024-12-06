@@ -1,24 +1,24 @@
-Here’s a version of your **String Operations Cheat Sheet** formatted for GitHub:
+Here’s a version of your String Operations Cheat Sheet formatted for GitHub:
 
 ---
 
-## **String Operations Cheat Sheet**
+## String Operations Cheat Sheet
 
-### **1. String Basics**
+ 1. String Basics
 A string in Python is a sequence of characters enclosed in single `'` or double `"` quotes.
 
 ```python
 s = "Hello, World!"
 ```
 
-- **Accessing Characters**: You can access individual characters using indexing.
+- Accessing Characters: You can access individual characters using indexing.
   
   ```python
   s[0]   # Output: 'H'
   s[-1]  # Output: '!'
   ```
 
-### **2. String Slicing**
+ 2. String Slicing
 Extract substrings using slice notation: `string[start:end:step]`.
 
 ```python
@@ -28,50 +28,50 @@ print(s[7:])    # Output: 'World!'
 print(s[::-1])  # Output: '!dlroW ,olleH' (Reversing the string)
 ```
 
-### **3. Common String Methods**
-- **`len()`**: Returns the length of the string.
+ 3. Common String Methods
+- `len()`: Returns the length of the string.
   
   ```python
   len(s)  # Output: 13
   ```
 
-- **`upper()` / `lower()`**: Converts a string to uppercase or lowercase.
+- `upper()` / `lower()`: Converts a string to uppercase or lowercase.
   
   ```python
   s.upper()  # Output: 'HELLO, WORLD!'
   ```
 
-- **`strip()`**: Removes leading and trailing spaces.
+- `strip()`: Removes leading and trailing spaces.
   
   ```python
   "  Hello  ".strip()  # Output: 'Hello'
   ```
 
-- **`split()`**: Splits the string into a list of substrings based on a delimiter.
+- `split()`: Splits the string into a list of substrings based on a delimiter.
   
   ```python
   "a,b,c".split(',')  # Output: ['a', 'b', 'c']
   ```
 
-- **`join()`**: Joins a list of strings into a single string using a delimiter.
+- `join()`: Joins a list of strings into a single string using a delimiter.
   
   ```python
   ','.join(['a', 'b', 'c'])  # Output: 'a,b,c'
   ```
 
-- **`find()`**: Returns the first index where the substring is found, or `-1` if not found.
+- `find()`: Returns the first index where the substring is found, or `-1` if not found.
   
   ```python
   s.find('World')  # Output: 7
   ```
 
-- **`replace()`**: Replaces occurrences of a substring with another string.
+- `replace()`: Replaces occurrences of a substring with another string.
   
   ```python
   s.replace("World", "Python")  # Output: 'Hello, Python!'
   ```
 
-### **4. String Immutability**
+ 4. String Immutability
 Strings in Python are immutable, meaning you can't modify them directly. You need to create a new string if you want to change it.
 
 ```python
@@ -80,7 +80,7 @@ s[0] = "h"  # This will raise an error
 s = "h" + s[1:]  # Correct way to modify the string
 ```
 
-### **5. String Comparison**
+ 5. String Comparison
 String comparisons use the usual comparison operators (`==`, `<`, `>`, etc.) and are done lexicographically.
 
 ```python
@@ -89,36 +89,36 @@ s2 = "def"
 print(s1 < s2)  # Output: True ('abc' comes before 'def' lexicographically)
 ```
 
-### **6. Substring Search**
-- **`in`**: Checks if a substring exists within a string.
+ 6. Substring Search
+- `in`: Checks if a substring exists within a string.
   
   ```python
   "Hello" in s  # Output: True
   ```
 
-- **`count()`**: Returns the number of occurrences of a substring.
+- `count()`: Returns the number of occurrences of a substring.
   
   ```python
   s.count("l")  # Output: 3
   ```
 
-### **7. String Formatting**
+ 7. String Formatting
 There are several ways to format strings in Python:
 
-- **f-strings (Python 3.6+)**: Embed expressions inside string literals using curly braces.
+- f-strings (Python 3.6+): Embed expressions inside string literals using curly braces.
 
   ```python
   name = "Alice"
   f"Hello, {name}!"  # Output: 'Hello, Alice!'
   ```
 
-- **`format()`**: Another way to insert variables into strings.
+- `format()`: Another way to insert variables into strings.
 
   ```python
   "Hello, {}!".format(name)  # Output: 'Hello, Alice!'
   ```
 
-### **8. String Palindrome Check**
+ 8. String Palindrome Check
 A palindrome is a string that reads the same forward and backward.
 
 ```python
@@ -130,7 +130,7 @@ def is_palindrome(s):
 is_palindrome("A man a plan a canal Panama")  # Output: True
 ```
 
-### **9. Anagram Check**
+ 9. Anagram Check
 An anagram is when two strings contain the same characters in different orders.
 
 ```python
@@ -141,7 +141,7 @@ def is_anagram(s1, s2):
 is_anagram("listen", "silent")  # Output: True
 ```
 
-### **10. Longest Common Substring**
+ 10. Longest Common Substring
 To find the longest common substring between two strings, use dynamic programming.
 
 ```python
@@ -165,7 +165,7 @@ def longest_common_substring(s1, s2):
 longest_common_substring("abcde", "abfce")  # Output: 'ab'
 ```
 
-### **11. Longest Palindromic Substring**
+ 11. Longest Palindromic Substring
 Finding the longest palindromic substring can be done using dynamic programming or expanding around centers.
 
 ```python
@@ -190,7 +190,7 @@ def longest_palindromic_substring(s):
 longest_palindromic_substring("babad")  # Output: 'bab'
 ```
 
-### **12. String to Integer Conversion (`atoi`)**
+ 12. String to Integer Conversion (`atoi`)
 Convert a string to an integer, handling edge cases like leading/trailing spaces, signs, and invalid input.
 
 ```python
@@ -207,13 +207,13 @@ def my_atoi(s):
         if not char.isdigit():
             break
         num = num * 10 + int(char)
-    return max(min(sign * num, 2**31 - 1), -2**31)
+    return max(min(sign * num, 231 - 1), -231)
 
 # Example usage:
 my_atoi("   -42")  # Output: -42
 ```
 
-### **13. String Compression**
+ 13. String Compression
 Compress repeated characters into a shortened format.
 
 ```python
@@ -233,7 +233,7 @@ def compress_string(s):
 compress_string("aabcccccaaa")  # Output: 'a2b1c5a3'
 ```
 
-### **14. Time Complexity of Common String Operations**
+ 14. Time Complexity of Common String Operations
 
 | Operation                 | Time Complexity |
 |---------------------------|-----------------|

@@ -1,12 +1,12 @@
-**Definition**:  
-**Recursion** is a method where a function calls itself to solve a problem. The problem is divided into smaller sub-problems, each resembling the original, until a base case is reached.
+Definition:  
+Recursion is a method where a function calls itself to solve a problem. The problem is divided into smaller sub-problems, each resembling the original, until a base case is reached.
 
-**Key Components**:
-1. **Base Case**: The condition at which recursion stops to prevent infinite calls.
-2. **Recursive Case**: The part where the function continues to call itself with modified parameters.
-3. **Return** : Return the solution from the recursive calls and combine them to solve the original problem.
+Key Components:
+1. Base Case: The condition at which recursion stops to prevent infinite calls.
+2. Recursive Case: The part where the function continues to call itself with modified parameters.
+3. Return : Return the solution from the recursive calls and combine them to solve the original problem.
 
-**Example**:
+Example:
 ```python
 def factorial(n):
     if n == 0:           # Base case
@@ -14,27 +14,27 @@ def factorial(n):
     return n * factorial(n - 1)  # Recursive case
 ```
 
-**Types of Recursion**:
-1. **Direct Recursion**: The function calls itself directly.
-2. **Indirect Recursion**: A function calls another function that, in turn, calls the first function.
+Types of Recursion:
+1. Direct Recursion: The function calls itself directly.
+2. Indirect Recursion: A function calls another function that, in turn, calls the first function.
 
-**Time Complexity**:  
+Time Complexity:  
 Depends on the number of recursive calls.
-- E.g., **Factorial**: O(n)
-- **Fibonacci** (Naive): O(2^n)  
+- E.g., Factorial: O(n)
+- Fibonacci (Naive): O(2^n)  
   (Can be optimized using memoization or dynamic programming)
 
-**Space Complexity**:  
+Space Complexity:  
 The space complexity includes the space taken by function calls on the call stack.
-- Typically, **O(n)** for a recursion depth of `n`, but this can be reduced with tail recursion optimization in some languages.
+- Typically, O(n) for a recursion depth of `n`, but this can be reduced with tail recursion optimization in some languages.
 
-**Advantages**:
+Advantages:
 - Simplifies the code for problems that can naturally be broken down into smaller, similar sub-problems (e.g., Tree Traversal, Divide and Conquer).
 
-**Disadvantages**:
+Disadvantages:
 - Can lead to excessive memory usage and slow performance if not optimized, especially for deep recursion.
 
-**Applications**:
+Applications:
 - Tree and graph traversal (DFS)
 - Divide and conquer algorithms (Merge Sort, Quick Sort)
 - Solving complex mathematical problems (e.g., Tower of Hanoi, Fibonacci)

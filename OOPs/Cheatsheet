@@ -176,9 +176,9 @@ print(dog.sound())  # Output: "Bark"
 - METHOD OVERLOADING :
 Method Overloading in Python means creating methods with the same name but different parameters. Although Python doesn’t support it natively, you can simulate it using:
 
-1. **Default Parameters**: Provide default values for parameters.
-2. **`*args` and `**kwargs`**: Allow methods to handle a variable number of arguments.
-3. **Conditional Logic**: Use conditions to handle different argument types or counts within the same method.
+1. Default Parameters: Provide default values for parameters.
+2. `*args` and `kwargs`: Allow methods to handle a variable number of arguments.
+3. Conditional Logic: Use conditions to handle different argument types or counts within the same method.
 
 Example with `*args`:
 ```python

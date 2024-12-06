@@ -1,65 +1,65 @@
 ## Heap Data Structure
-A **heap** is a specialized tree-based data structure that satisfies the **heap property**:
-- For a **Max-Heap**, the value of each node is greater than or equal to the values of its children.
-- For a **Min-Heap**, the value of each node is less than or equal to the values of its children.
+A heap is a specialized tree-based data structure that satisfies the heap property:
+- For a Max-Heap, the value of each node is greater than or equal to the values of its children.
+- For a Min-Heap, the value of each node is less than or equal to the values of its children.
 
-### 1. **Max-Heap**
-A **Max-Heap** is a complete binary tree in which the value in each internal node is greater than or equal to the values in the children of that node.
+ 1. Max-Heap
+A Max-Heap is a complete binary tree in which the value in each internal node is greater than or equal to the values in the children of that node.
 
-#### Array Representation of Max-Heap
+# Array Representation of Max-Heap
 Mapping elements of a heap into an array is straightforward:
 - If a node is stored at index `i`, its left child is stored at index `2i + 1`, and its right child at index `2i + 2`.
 - A max-heap is a complete binary tree and can be represented as an array. The root element will be at `arr[0]`.
 - To access nodes:
-  - **Parent** of `i` = `arr[(i - 1) // 2]`
-  - **Left child** of `i` = `arr[2 * i + 1]`
-  - **Right child** of `i` = `arr[2 * i + 2]`
+  - Parent of `i` = `arr[(i - 1) // 2]`
+  - Left child of `i` = `arr[2 * i + 1]`
+  - Right child of `i` = `arr[2 * i + 2]`
 
-#### Operations on Max-Heap
-1. **getMax()**: Returns the root element in `O(1)` time.
-2. **extractMax()**: Removes the maximum element with `O(log n)` time complexity, as the heap property must be maintained by calling `heapify()` after removal.
-3. **insert()**: Adds a new key, taking `O(log n)` time due to the need to maintain the heap property.
+# Operations on Max-Heap
+1. getMax(): Returns the root element in `O(1)` time.
+2. extractMax(): Removes the maximum element with `O(log n)` time complexity, as the heap property must be maintained by calling `heapify()` after removal.
+3. insert(): Adds a new key, taking `O(log n)` time due to the need to maintain the heap property.
 
-### 2. **Heapify Process**
-- **Heapify**: Ensures that a binary tree satisfies the max-heap property. 
+ 2. Heapify Process
+- Heapify: Ensures that a binary tree satisfies the max-heap property. 
   - For max-heap, start from the last non-leaf node and call heapify in a bottom-up manner.
   - The time complexity is `O(log n)`.
-- **Building a Max-Heap**: Convert an unordered array into a max-heap by calling `heapify` on all non-leaf nodes from bottom up. This is done in `O(n)` time.
+- Building a Max-Heap: Convert an unordered array into a max-heap by calling `heapify` on all non-leaf nodes from bottom up. This is done in `O(n)` time.
 
-### 3. **Complexity Analysis**
-- **Space Complexity**:
+ 3. Complexity Analysis
+- Space Complexity:
   - Insert, extract, and other operations typically require `O(1)` space if done in-place.
   - Building a heap from an array is also `O(1)` space if done in-place.
-- **Time Complexity for Operations**:
-  - **Insertion**: `O(log n)`
-  - **Deletion (extractMax)**: `O(log n)`
-  - **getMax**: `O(1)`
-  - **Heapify**: `O(log n)`
-  - **Building the Heap**: `O(n)`
+- Time Complexity for Operations:
+  - Insertion: `O(log n)`
+  - Deletion (extractMax): `O(log n)`
+  - getMax: `O(1)`
+  - Heapify: `O(log n)`
+  - Building the Heap: `O(n)`
 
-### 4. **Common Use Cases of Heaps**
-- **Priority Queue**: Max-heaps are used for priority queues where elements with higher priority are dequeued before those with lower priority.
-- **Heap Sort**:
+ 4. Common Use Cases of Heaps
+- Priority Queue: Max-heaps are used for priority queues where elements with higher priority are dequeued before those with lower priority.
+- Heap Sort:
   - Use a max-heap to sort an array in descending order.
   - Steps:
     1. Build a max-heap with the array.
     2. Swap the first element (maximum) with the last element of the heap and reduce the heap size by one.
     3. Call `heapify` on the root node.
     4. Repeat until sorted.
-  - **Time Complexity**: `O(n log n)`
+  - Time Complexity: `O(n log n)`
 
-### 5. **Implementing Heaps in Python (Heapq Library)**
+ 5. Implementing Heaps in Python (Heapq Library)
 Python’s `heapq` library only provides a min-heap by default, but you can simulate a max-heap by inverting values.
 
-#### Key Functions in `heapq`
-1. **heapq.heappush(heap, item)**: Adds an item to the heap while maintaining the heap property.
-2. **heapq.heappop(heap)**: Removes and returns the smallest item from the heap.
-3. **heapq.heapify(list)**: Converts a list into a heap, in-place, in linear time.
-4. **heapq.heappushpop(heap, item)**: Pushes a new item onto the heap, then pops and returns the smallest item.
-5. **heapq.nlargest(n, iterable, key=None)**: Returns the `n` largest elements from the dataset.
-6. **heapq.nsmallest(n, iterable, key=None)**: Returns the `n` smallest elements from the dataset.
+# Key Functions in `heapq`
+1. heapq.heappush(heap, item): Adds an item to the heap while maintaining the heap property.
+2. heapq.heappop(heap): Removes and returns the smallest item from the heap.
+3. heapq.heapify(list): Converts a list into a heap, in-place, in linear time.
+4. heapq.heappushpop(heap, item): Pushes a new item onto the heap, then pops and returns the smallest item.
+5. heapq.nlargest(n, iterable, key=None): Returns the `n` largest elements from the dataset.
+6. heapq.nsmallest(n, iterable, key=None): Returns the `n` smallest elements from the dataset.
 
-#### Simulating a Max-Heap with `heapq`
+# Simulating a Max-Heap with `heapq`
 To simulate a max-heap, insert negative values and invert them upon retrieval:
 
 import heapq
@@ -73,7 +73,7 @@ heapq.heappush(max_heap, -15)
 # Get the maximum element
 max_value = -heapq.heappop(max_heap)
 print("Maximum element removed:", max_value)
-### 6. **Example Usage of `heapq` Library**
+ 6. Example Usage of `heapq` Library
 import heapq
 
 # Create an empty list to serve as a min-heap
@@ -109,7 +109,7 @@ largest_two = heapq.nlargest(2, data)
 print("Two smallest elements:", smallest_two)
 print("Two largest elements:", largest_two)
 
-#### Example Output:
+# Example Output:
 Min-Heap: [1, 4, 7, 10]
 Smallest element removed: 1
 Heap after pop: [4, 10, 7]

@@ -1,28 +1,28 @@
-### Queue - Concise Notes
+ Queue - Concise Notes
 
-**Definition**:  
-A **Queue** is a linear data structure that follows the **FIFO** (First In, First Out) principle, meaning the first element added is the first one to be removed.
+Definition:  
+A Queue is a linear data structure that follows the FIFO (First In, First Out) principle, meaning the first element added is the first one to be removed.
 
-**Key Operations**:
-1. **Enqueue**: Add an element to the rear of the queue.
-2. **Dequeue**: Remove and return the front element from the queue.
-3. **Peek/Front**: Retrieve the front element without removing it.
-4. **isEmpty**: Check if the queue is empty.
-5. **isFull**: (For bounded queues) Check if the queue is full.
+Key Operations:
+1. Enqueue: Add an element to the rear of the queue.
+2. Dequeue: Remove and return the front element from the queue.
+3. Peek/Front: Retrieve the front element without removing it.
+4. isEmpty: Check if the queue is empty.
+5. isFull: (For bounded queues) Check if the queue is full.
 
-**Types of Queues**:
-1. **Simple Queue**: Basic queue where elements are added to the rear and removed from the front.
-2. **Circular Queue**: Overcomes the limitation of unused space in a simple queue by connecting the end back to the front.
-3. **Priority Queue**: Elements are dequeued based on priority rather than the order of arrival.
-4. **Deque (Double-Ended Queue)**: Allows insertion and deletion from both ends.
+Types of Queues:
+1. Simple Queue: Basic queue where elements are added to the rear and removed from the front.
+2. Circular Queue: Overcomes the limitation of unused space in a simple queue by connecting the end back to the front.
+3. Priority Queue: Elements are dequeued based on priority rather than the order of arrival.
+4. Deque (Double-Ended Queue): Allows insertion and deletion from both ends.
 
-**Time Complexity**:
-- **Enqueue**: O(1)
-- **Dequeue**: O(1)
-- **Peek**: O(1)
-- **isEmpty**: O(1)
+Time Complexity:
+- Enqueue: O(1)
+- Dequeue: O(1)
+- Peek: O(1)
+- isEmpty: O(1)
 
-**Applications**:
+Applications:
 - Scheduling (CPU task scheduling, printer spooling)
 - BFS (Breadth-First Search)
 - Handling interrupts in real-time systems

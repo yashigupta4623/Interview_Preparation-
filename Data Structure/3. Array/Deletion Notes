@@ -4,7 +4,7 @@ This repository demonstrates different ways to delete elements from an array in 
 
 ## Methods
 
-### 1. Delete an Element from the Beginning of the Array
+ 1. Delete an Element from the Beginning of the Array
 To remove the first element of the array, use the `pop(0)` method. This shifts all the subsequent elements to the left.
 
 ```python
@@ -26,7 +26,7 @@ my_list = [1, 2, 3, 4]
 delete_from_beginning(my_list)  # Output: Element 1 deleted from the beginning: [2, 3, 4]
 ```
 
-### 2. Delete an Element from the End of the Array
+ 2. Delete an Element from the End of the Array
 To remove the last element of the array, use the `pop()` method without any arguments. This operation does not require shifting any elements.
 
 ```python
@@ -48,7 +48,7 @@ my_list = [1, 2, 3, 4]
 delete_from_end(my_list)  # Output: Element 4 deleted from the end: [1, 2, 3]
 ```
 
-### 3. Delete an Element from a Specific Index
+ 3. Delete an Element from a Specific Index
 To delete an element at a specific index, use `pop(index)`. Ensure the index is within the valid range of the list.
 
 ```python
@@ -77,17 +77,17 @@ delete_from_index(my_list, 2)  # Output: Element 3 deleted from index 2: [1, 2, 
 
 | Operation                  | Time Complexity |
 |----------------------------|-----------------|
-| **Delete from Beginning**   | O(n)            |
-| **Delete from End**         | O(1)            |
-| **Delete from Index**       | O(n) (worst case) |
+| Delete from Beginning   | O(n)            |
+| Delete from End         | O(1)            |
+| Delete from Index       | O(n) (worst case) |
 
 ---
 
 ## Explanation:
 
-- **Deleting from the beginning**: The `pop(0)` method removes the first element, and all subsequent elements are shifted left. This takes **O(n)** time since the array needs to shift all the elements.
+- Deleting from the beginning: The `pop(0)` method removes the first element, and all subsequent elements are shifted left. This takes O(n) time since the array needs to shift all the elements.
   
-- **Deleting from the end**: The `pop()` method without arguments removes the last element without needing to shift any elements. This takes constant **O(1)** time.
+- Deleting from the end: The `pop()` method without arguments removes the last element without needing to shift any elements. This takes constant O(1) time.
 
-- **Deleting from a specific index**: The `pop(index)` method removes the element at the specified index. If the element is near the end, this operation is efficient, but if it's at the beginning, the rest of the elements must shift, making the time complexity **O(n)** in the worst case.
+- Deleting from a specific index: The `pop(index)` method removes the element at the specified index. If the element is near the end, this operation is efficient, but if it's at the beginning, the rest of the elements must shift, making the time complexity O(n) in the worst case.
 

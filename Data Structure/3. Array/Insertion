@@ -1,4 +1,4 @@
-### 1. Insert an element at the **beginning** of the array:
+ 1. Insert an element at the beginning of the array:
 
 ```python
 def insert_at_beginning(arr, element):
@@ -17,7 +17,7 @@ my_list = [1, 2, 3, 4]
 insert_at_beginning(my_list, 10)
 ```
 
-### 2. Insert an element at the **end** of the array:
+ 2. Insert an element at the end of the array:
 
 ```python
 def insert_at_end(arr, element):
@@ -36,7 +36,7 @@ my_list = [1, 2, 3, 4]
 insert_at_end(my_list, 20)
 ```
 
-### 3. Insert an element at a **specific index** in the array:
+ 3. Insert an element at a specific index in the array:
 
 ```python
 def insert_at_index(arr, element, index):
@@ -59,7 +59,7 @@ my_list = [1, 2, 3, 4]
 insert_at_index(my_list, 15, 2)
 ```
 
-### Explanation:
-1. **Insert at the beginning**: The `insert()` method with index `0` places the element at the start of the list.
-2. **Insert at the end**: The `append()` method adds the element to the end.
-3. **Insert at a specific index**: The `insert()` method with a valid index adds the element at that specific position.
+ Explanation:
+1. Insert at the beginning: The `insert()` method with index `0` places the element at the start of the list.
+2. Insert at the end: The `append()` method adds the element to the end.
+3. Insert at a specific index: The `insert()` method with a valid index adds the element at that specific position.

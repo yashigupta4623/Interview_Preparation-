@@ -1,49 +1,49 @@
-### Linux, Unix, Ubuntu
-- **Unix**: A proprietary OS developed in the 1970s, known for multiuser capabilities and stability.
-- **Linux**: An open-source OS based on Unix principles, created in the 1990s. It offers flexibility and is the foundation for many distributions.
-- **Ubuntu**: A popular Linux distribution based on Debian, known for ease of use, user support, and frequent updates.
+ Linux, Unix, Ubuntu
+- Unix: A proprietary OS developed in the 1970s, known for multiuser capabilities and stability.
+- Linux: An open-source OS based on Unix principles, created in the 1990s. It offers flexibility and is the foundation for many distributions.
+- Ubuntu: A popular Linux distribution based on Debian, known for ease of use, user support, and frequent updates.
 
-### CLI vs GUI
-- **CLI (Command-Line Interface)**: Text-based, offers more control, and is highly efficient for skilled users. Commands are input directly in the terminal.
-- **GUI (Graphical User Interface)**: Mouse-driven and visually intuitive, better suited for beginners but slower than CLI for advanced tasks.
+ CLI vs GUI
+- CLI (Command-Line Interface): Text-based, offers more control, and is highly efficient for skilled users. Commands are input directly in the terminal.
+- GUI (Graphical User Interface): Mouse-driven and visually intuitive, better suited for beginners but slower than CLI for advanced tasks.
 
-### Commands
-- **Basic Commands**: `pwd` (print working directory), `cd` (change directory), `ls` (list files), `cat` (concatenate and display files).
-- **User Commands**: `whoami` (shows current user), `sudo` (execute commands with root permissions), `su` (switch user).
+ Commands
+- Basic Commands: `pwd` (print working directory), `cd` (change directory), `ls` (list files), `cat` (concatenate and display files).
+- User Commands: `whoami` (shows current user), `sudo` (execute commands with root permissions), `su` (switch user).
 
-### Relative vs Absolute Path
-- **Relative Path**: Path from the current directory (e.g., `./folder/file`).
-- **Absolute Path**: Full path from the root directory (e.g., `/home/user/folder/file`).
+ Relative vs Absolute Path
+- Relative Path: Path from the current directory (e.g., `./folder/file`).
+- Absolute Path: Full path from the root directory (e.g., `/home/user/folder/file`).
 
-### sudo and su
-- **sudo**: Grants temporary root privileges to execute a command. `sudo command` runs the command as the root.
-- **su**: Switches to a superuser (root) or another user, allowing all commands in root mode until you exit.
+ sudo and su
+- sudo: Grants temporary root privileges to execute a command. `sudo command` runs the command as the root.
+- su: Switches to a superuser (root) or another user, allowing all commands in root mode until you exit.
 
-### File Commands: `ls`, `ps`, `top`
-- **ls**: Lists files. Options include `-l` (long listing), `-a` (all, including hidden files), `-h` (human-readable sizes).
-- **ps**: Displays running processes for the current user.
-- **top**: Provides a real-time view of running processes, resource usage, and system stats.
+ File Commands: `ls`, `ps`, `top`
+- ls: Lists files. Options include `-l` (long listing), `-a` (all, including hidden files), `-h` (human-readable sizes).
+- ps: Displays running processes for the current user.
+- top: Provides a real-time view of running processes, resource usage, and system stats.
 
-### vim
-- **vim**: A powerful text editor with two main modes—Insert mode (text input) and Command mode (execute commands like saving or quitting).
+ vim
+- vim: A powerful text editor with two main modes—Insert mode (text input) and Command mode (execute commands like saving or quitting).
 
-### chmod
-- **chmod**: Changes file permissions. Use format `chmod [permissions] [file]` where permissions are set with numeric (e.g., `755`) or symbolic (e.g., `u+rwx`) values.
+ chmod
+- chmod: Changes file permissions. Use format `chmod [permissions] [file]` where permissions are set with numeric (e.g., `755`) or symbolic (e.g., `u+rwx`) values.
 
-### Symbols
-- **$**: Denotes a regular user prompt.
-- **#**: Denotes a root user prompt (after using `sudo su` or logging in as root).
+ Symbols
+- $: Denotes a regular user prompt.
+- #: Denotes a root user prompt (after using `sudo su` or logging in as root).
 
-### Virtual Machine (VM)
-- **Virtual Machine (VM)**: A software emulation of a physical computer that allows you to run an OS within another OS, often used for testing and development. **Benefits**: Isolation, flexibility, and ease of snapshotting/rollback.
-- **Popular VM Platforms**: VirtualBox, VMware, and KVM (Kernel-based Virtual Machine, native to Linux). They offer support for running multiple OSes simultaneously with resource management.
+ Virtual Machine (VM)
+- Virtual Machine (VM): A software emulation of a physical computer that allows you to run an OS within another OS, often used for testing and development. Benefits: Isolation, flexibility, and ease of snapshotting/rollback.
+- Popular VM Platforms: VirtualBox, VMware, and KVM (Kernel-based Virtual Machine, native to Linux). They offer support for running multiple OSes simultaneously with resource management.
 
-### Important System Topics
-- **File System Hierarchy**: Linux uses a unified directory structure; main directories include `/home` (user files), `/etc` (system config), `/bin` (essential binaries), `/var` (logs), and `/tmp` (temporary files).
-- **Package Management**: Ubuntu uses `apt` for software management. Commands include `apt update` (refresh repositories), `apt install` (install a package), and `apt remove` (remove a package).
-- **Networking Commands**: `ping` (checks connectivity), `ifconfig` or `ip` (interface configuration), `netstat` (network statistics).
-- **System Services**: Managed by `systemd`. Use `systemctl` to control services (e.g., `systemctl start nginx` starts the Nginx web server).
-- **Shell Scripting**: Scripts in the Bash shell automate tasks. Basic syntax: `#!/bin/bash` at the top of a file, followed by commands.
+ Important System Topics
+- File System Hierarchy: Linux uses a unified directory structure; main directories include `/home` (user files), `/etc` (system config), `/bin` (essential binaries), `/var` (logs), and `/tmp` (temporary files).
+- Package Management: Ubuntu uses `apt` for software management. Commands include `apt update` (refresh repositories), `apt install` (install a package), and `apt remove` (remove a package).
+- Networking Commands: `ping` (checks connectivity), `ifconfig` or `ip` (interface configuration), `netstat` (network statistics).
+- System Services: Managed by `systemd`. Use `systemctl` to control services (e.g., `systemctl start nginx` starts the Nginx web server).
+- Shell Scripting: Scripts in the Bash shell automate tasks. Basic syntax: `#!/bin/bash` at the top of a file, followed by commands.
 
 This enhanced overview covers foundational Linux commands, file management, and system essentials along with virtual machine concepts, providing a comprehensive understanding of Ubuntu.
 

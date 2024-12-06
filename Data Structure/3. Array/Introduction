@@ -1,53 +1,53 @@
-### **What is an Array?**
+ What is an Array?
 
 An array is a data structure that holds a fixed-size collection of elements of the same data type. Arrays store elements in contiguous memory locations, meaning the elements are indexed and accessible via their positions.
 
-#### **Key Characteristics of Arrays:**
-1. **Fixed Size:** Once an array is created, its size cannot be changed.
-2. **Indexed Access:** Elements in an array can be accessed via indices (e.g., `arr[0]` for the first element).
-3. **Homogeneous Data:** All elements in an array are of the same data type (e.g., all integers or all strings).
-4. **Contiguous Memory Allocation:** Elements are stored in consecutive memory locations, making access efficient.
+# Key Characteristics of Arrays:
+1. Fixed Size: Once an array is created, its size cannot be changed.
+2. Indexed Access: Elements in an array can be accessed via indices (e.g., `arr[0]` for the first element).
+3. Homogeneous Data: All elements in an array are of the same data type (e.g., all integers or all strings).
+4. Contiguous Memory Allocation: Elements are stored in consecutive memory locations, making access efficient.
 
 ---
 
-### **Types of Arrays:**
-1. **One-Dimensional Array:** A linear array with a single list of elements.
+ Types of Arrays:
+1. One-Dimensional Array: A linear array with a single list of elements.
    - Example: `int[] arr = {1, 2, 3, 4, 5};`
    
-2. **Multi-Dimensional Array:**
-   - **Two-Dimensional Array:** Often used to represent matrices or grids.
+2. Multi-Dimensional Array:
+   - Two-Dimensional Array: Often used to represent matrices or grids.
      - Example: `int[][] arr = {{1, 2}, {3, 4}};`
-   - **N-Dimensional Array:** Higher-dimensional arrays used for complex data.
+   - N-Dimensional Array: Higher-dimensional arrays used for complex data.
 
 
-### **Optimization Techniques:**
+ Optimization Techniques:
 
-#### **1. Time Complexity Analysis:**
+# 1. Time Complexity Analysis:
    - Always analyze the time complexity of different operations.
    - Example: Sorting an array takes O(n log n) but searching in a sorted array using binary search takes O(log n).
 
-#### **2. Space Complexity Optimization:**
+# 2. Space Complexity Optimization:
    - Sometimes space can be reduced by using in-place algorithms, modifying the array without using extra memory.
    - Example: In-place reversal of an array.
 
 ---
 
-### **Array in Different Programming Languages:**
+ Array in Different Programming Languages:
 
-- **C++/Java:** Use arrays or `ArrayList` (Java) or `Vector` (C++) for dynamic arrays.
-- **Python:** Lists serve as dynamic arrays.
-- **JavaScript:** Arrays are dynamic and can grow/shrink in size.
+- C++/Java: Use arrays or `ArrayList` (Java) or `Vector` (C++) for dynamic arrays.
+- Python: Lists serve as dynamic arrays.
+- JavaScript: Arrays are dynamic and can grow/shrink in size.
 
 ---
 
-### **Tips for MAANG Array Preparation:**
+ Tips for MAANG Array Preparation:
 
-1. **Master Common Patterns:** Sliding window, two-pointer, and divide & conquer techniques often come up in array-based problems.
+1. Master Common Patterns: Sliding window, two-pointer, and divide & conquer techniques often come up in array-based problems.
    
-2. **Practice on LeetCode/HackerRank/Codeforces:**
-   - **Top Problems:** Try problems tagged with arrays and sorted arrays.
-   - **Company-Specific:** Focus on company-specific problems involving arrays.
+2. Practice on LeetCode/HackerRank/Codeforces:
+   - Top Problems: Try problems tagged with arrays and sorted arrays.
+   - Company-Specific: Focus on company-specific problems involving arrays.
 
-3. **Time Management:** Solve problems of varying difficulty (easy, medium, hard) to get a balanced understanding.
+3. Time Management: Solve problems of varying difficulty (easy, medium, hard) to get a balanced understanding.
 
-4. **Optimize for Both Time and Space:** In interviews, try to come up with multiple approaches, first focusing on a brute-force solution, then optimizing it.
+4. Optimize for Both Time and Space: In interviews, try to come up with multiple approaches, first focusing on a brute-force solution, then optimizing it.

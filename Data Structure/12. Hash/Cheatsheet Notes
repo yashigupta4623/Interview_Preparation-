@@ -1,31 +1,31 @@
-### Hashing: Key Concepts and Techniques
+ Hashing: Key Concepts and Techniques
 
 Hashing is a technique used to convert an input of variable size into a fixed-size value, known as a hash value, using mathematical functions. Hashing is widely employed in data storage and retrieval systems to enable fast access to data.
 
-#### Key Concepts
+# Key Concepts
 
-1. **Hash Function**: A mathematical formula that transforms input data into a fixed-size hash value. 
-2. **Hash Table**: A data structure that stores data in key-value pairs. Each key is a hash value, and the corresponding value is the actual data, enabling quick data retrieval.
-3. **Collision**: Occurs when two different keys produce the same hash value, leading to the need for collision resolution techniques. Learn more about the **Separate Chaining** collision handling technique [here](https://www.geeksforgeeks.org/separate-chaining-collision-handling-technique-in-hashing/).
+1. Hash Function: A mathematical formula that transforms input data into a fixed-size hash value. 
+2. Hash Table: A data structure that stores data in key-value pairs. Each key is a hash value, and the corresponding value is the actual data, enabling quick data retrieval.
+3. Collision: Occurs when two different keys produce the same hash value, leading to the need for collision resolution techniques. Learn more about the Separate Chaining collision handling technique [here](https://www.geeksforgeeks.org/separate-chaining-collision-handling-technique-in-hashing/).
 
-#### Types of Hash Functions
+# Types of Hash Functions
 
-1. **Division Method**: Divides the input by a constant and uses the remainder as the hash value. This is a simple and widely used method.
-2. **Mid Square Method**: Squares the input and extracts the middle digits to form the hash value. This method reduces clustering of values.
-3. **Folding Method**: Breaks the input into equal-sized sections, then adds them together to obtain the hash value.
-4. **Multiplication Method**: Multiplies the input by a constant and uses the fractional part of the result as the hash value. This method is less prone to clustering.
+1. Division Method: Divides the input by a constant and uses the remainder as the hash value. This is a simple and widely used method.
+2. Mid Square Method: Squares the input and extracts the middle digits to form the hash value. This method reduces clustering of values.
+3. Folding Method: Breaks the input into equal-sized sections, then adds them together to obtain the hash value.
+4. Multiplication Method: Multiplies the input by a constant and uses the fractional part of the result as the hash value. This method is less prone to clustering.
 
-#### Collision Resolution Techniques
+# Collision Resolution Techniques
 
-1. **Separate Chaining (Open Hashing)**: When a collision occurs, all elements with the same hash value are stored in a linked list at the hash index. Read more about this technique [here](https://www.geeksforgeeks.org/separate-chaining-collision-handling-technique-in-hashing/).
-2. **Open Addressing (Closed Hashing)**: When a collision occurs, alternative locations within the hash table are searched based on specific strategies until an empty slot is found. Open addressing methods include:
-   - **Linear Probing**: Sequentially searches for the next available slot.
-   - **Quadratic Probing**: Uses quadratic intervals to find an open slot, reducing clustering.
-   - **Double Hashing**: Applies a second hash function to the key to determine the interval for finding a new position.
+1. Separate Chaining (Open Hashing): When a collision occurs, all elements with the same hash value are stored in a linked list at the hash index. Read more about this technique [here](https://www.geeksforgeeks.org/separate-chaining-collision-handling-technique-in-hashing/).
+2. Open Addressing (Closed Hashing): When a collision occurs, alternative locations within the hash table are searched based on specific strategies until an empty slot is found. Open addressing methods include:
+   - Linear Probing: Sequentially searches for the next available slot.
+   - Quadratic Probing: Uses quadratic intervals to find an open slot, reducing clustering.
+   - Double Hashing: Applies a second hash function to the key to determine the interval for finding a new position.
 
-#### Applications of Hashing
+# Applications of Hashing
 
-- **Data Storage and Retrieval**: Hashing is used in databases and file systems for efficient storage and quick retrieval of data.
-- **Password and Digital Signature Verification**: Hashing verifies data authenticity and integrity.
-- **Load Balancing**: Hashing helps distribute network requests evenly across multiple servers.
-- **Data Integrity and Authentication**: Secure hashing algorithms, such as SHA and MD5, generate hash values that protect data from tampering.
+- Data Storage and Retrieval: Hashing is used in databases and file systems for efficient storage and quick retrieval of data.
+- Password and Digital Signature Verification: Hashing verifies data authenticity and integrity.
+- Load Balancing: Hashing helps distribute network requests evenly across multiple servers.
+- Data Integrity and Authentication: Secure hashing algorithms, such as SHA and MD5, generate hash values that protect data from tampering.

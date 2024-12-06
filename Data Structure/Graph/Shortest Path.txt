@@ -1,0 +1,171 @@
+BFS for Undirected Graph
+
+```python
+from collections import deque
+
+def shortest_path_undirected(adj, s, t):
+    """
+    Find the shortest path in an undirected graph using BFS.
+
+    Parameters:
+    adj (dict): Adjacency list representation of the graph.
+    s (int): Source node.
+    t (int): Target node.
+
+    Returns:
+    list: List representing the shortest path from s to t.
+    """
+    parent = [-1] * len(adj)
+    visited = [False] * len(adj)
+    q = deque()
+
+    visited[s] = True
+    q.append(s)
+
+    while q:
+        front = q.popleft()
+
+        for neighbor in adj[front]:
+            if not visited[neighbor]:
+                visited[neighbor] = True
+                parent[neighbor] = front
+                q.append(neighbor)
+
+    # Reconstruct the shortest path
+    path = []
+    current_node = t
+    path.append(t)
+
+    while current_node != s:
+        current_node = parent[current_node]
+        path.append(current_node)
+
+    path.reverse()
+    return path
+```
+---
+
+ DFS for Directed Graph
+
+```python
+def dfs_shortest_path_directed(adj, s, t):
+    """
+    Find the shortest path in a directed graph using DFS.
+
+    Parameters:
+    adj (dict): Adjacency list representation of the graph.
+    s (int): Source node.
+    t (int): Target node.
+
+    Returns:
+    list: List representing the shortest path from s to t.
+    """
+    def dfs(node, path):
+        path.append(node)  # Add current node to the path
+
+        if node == t:  # If target node is reached
+            nonlocal shortest_path
+            if len(path) < len(shortest_path):
+                shortest_path = path[:]
+        else:
+            for neighbor in adj[node]:
+                if neighbor not in path:  # Avoid revisiting
+                    dfs(neighbor, path)
+
+        path.pop()  # Backtrack
+
+    shortest_path = [float('inf')]
+    dfs(s, [])
+    return shortest_path if shortest_path != [float('inf')] else []
+```
+
+---
+
+ How It Works
+
+1. Initialization:
+   - BFS: Tracks visited nodes and their parents for path reconstruction.
+   - DFS: Recursively explores all paths and backtracks to ensure all possible paths are evaluated.
+
+2. Traversal:
+   - BFS: Processes nodes level by level, ensuring the shortest path is found in unweighted graphs.
+   - DFS: Explores all paths recursively, comparing path lengths to find the shortest.
+
+3. Path Reconstruction:
+   - Both algorithms reconstruct the path using either a `parent` list (BFS) or by tracking the path during recursion (DFS).
+
+---
+
+ Examples
+
+# Undirected Graph (BFS)
+
+```python
+adj = {
+    0: [1, 2],
+    1: [0, 3],
+    2: [0, 3],
+    3: [1, 2]
+}
+
+s = 0  # Source node
+t = 3  # Target node
+```
+
+Output:
+```
+Shortest Path: [0, 1, 3]
+```
+
+---
+
+# Directed Graph (DFS)
+
+```python
+adj = {
+    0: [1, 2],
+    1: [3],
+    2: [3],
+    3: []
+}
+
+s = 0  # Source node
+t = 3  # Target node
+```
+
+Output:
+```
+Shortest Path: [0, 1, 3]
+```
+
+---
+
+ Why BFS and DFS?
+
+1. BFS:
+   - Guarantees the shortest path in unweighted graphs.
+   - Time Complexity: O(V + E).
+
+2. DFS:
+   - Useful for directed graphs where exhaustive path exploration is required.
+   - Can handle additional constraints.
+
+---
+
+ Applications
+
+- Undirected Graphs:
+  - Navigation in grids or mazes.
+  - Finding the shortest connection in social networks.
+
+- Directed Graphs:
+  - Dependency resolution (e.g., build systems).
+  - Pathfinding in acyclic graphs.
+
+--- 
+
+IMPT!!
+
+- BFS for Undirected Graphs: Because BFS explores nodes level by level, it guarantees finding the shortest path in terms of edges in unweighted undirected graphs.
+  
+- DFS for Directed Graphs: Because DFS explores paths deeply along directed edges, it is more suited for tasks like topological sorting and cycle detection in directed graphs.

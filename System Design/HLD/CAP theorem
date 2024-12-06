@@ -1,25 +1,25 @@
-The CAP theorem, or Brewer’s Theorem, states that in a distributed system with replicated data, you can only guarantee **two out of three properties**: Consistency, Availability, and Partition Tolerance.
+The CAP theorem, or Brewer’s Theorem, states that in a distributed system with replicated data, you can only guarantee two out of three properties: Consistency, Availability, and Partition Tolerance.
 
-### CAP Theorem Properties
+ CAP Theorem Properties
 
-1. **Consistency (C)**:
+1. Consistency (C):
    - Ensures all nodes have the same data at the same time. Any read will reflect the most recent write, or return an error.
    
-2. **Availability (A)**:
+2. Availability (A):
    - Ensures every request receives a response, even if it’s not the most recent data. This guarantees the system is always responsive.
    
-3. **Partition Tolerance (P)**:
+3. Partition Tolerance (P):
    - Allows the system to continue operating despite network partitions (communication breakdowns between nodes). The system can still function but must choose between consistency and availability.
 
-### Why Can’t All Three Be Achieved?
+ Why Can’t All Three Be Achieved?
 - In the presence of a network partition, the system must choose between:
-  - **Consistency and Availability (CA)**: All nodes respond with consistent data but may go down if partitions occur.
-  - **Consistency and Partition Tolerance (CP)**: Guarantees consistent data even during network failures, but may be unavailable.
-  - **Availability and Partition Tolerance (AP)**: Remains available despite partitions but may return outdated or inconsistent data.
+  - Consistency and Availability (CA): All nodes respond with consistent data but may go down if partitions occur.
+  - Consistency and Partition Tolerance (CP): Guarantees consistent data even during network failures, but may be unavailable.
+  - Availability and Partition Tolerance (AP): Remains available despite partitions but may return outdated or inconsistent data.
 
-### Practical Examples
-- **CA**: Suitable for systems in a single location (e.g., relational databases) where partitions are rare.
-- **CP**: Preferred for systems needing strict data accuracy, such as HBase.
-- **AP**: Used by systems prioritizing uptime, like Cassandra and DynamoDB, even if data consistency is relaxed.
+ Practical Examples
+- CA: Suitable for systems in a single location (e.g., relational databases) where partitions are rare.
+- CP: Preferred for systems needing strict data accuracy, such as HBase.
+- AP: Used by systems prioritizing uptime, like Cassandra and DynamoDB, even if data consistency is relaxed.
 
 In summary, the CAP theorem highlights the need to trade off one of these properties depending on system requirements, as it is impractical to guarantee all three simultaneously.

@@ -1,145 +1,145 @@
-### High-Level Design (HLD) Cheat Sheet
+ High-Level Design (HLD) Cheat Sheet
 
 ---
 
-#### **1. What is High-Level Design?**
-- **Purpose:** Provides an overview of a system's architecture, components, and interactions.
-- **Focus:** Describes the structure and high-level components rather than low-level details.
-- **Audience:** Primarily for stakeholders, managers, and engineers to understand the system layout, dependencies, and flow.
+# 1. What is High-Level Design?
+- Purpose: Provides an overview of a system's architecture, components, and interactions.
+- Focus: Describes the structure and high-level components rather than low-level details.
+- Audience: Primarily for stakeholders, managers, and engineers to understand the system layout, dependencies, and flow.
 
 ---
 
-### **2. Key Components of HLD**
+ 2. Key Components of HLD
 
-#### **a. System Architecture**
-- **Types of Architectures:** 
-  - **Monolithic:** Single application with all components integrated together.
-  - **Microservices:** Independent, loosely coupled services, each with a specific functionality.
-  - **Event-Driven Architecture:** Services communicate by publishing and subscribing to events, ideal for reactive systems.
-  - **Serverless:** Functions triggered by events, scaling automatically with no need for managing infrastructure.
+# a. System Architecture
+- Types of Architectures: 
+  - Monolithic: Single application with all components integrated together.
+  - Microservices: Independent, loosely coupled services, each with a specific functionality.
+  - Event-Driven Architecture: Services communicate by publishing and subscribing to events, ideal for reactive systems.
+  - Serverless: Functions triggered by events, scaling automatically with no need for managing infrastructure.
   
-- **Architecture Diagram:** Shows the components, modules, and flow between them.
+- Architecture Diagram: Shows the components, modules, and flow between them.
 
-#### **b. Component Design**
-- **Modules/Services:** Identify main modules and services, describe their responsibilities.
-- **Inter-Component Communication:** Define how services will interact (e.g., REST APIs, RPC, gRPC).
-- **Data Flow:** Outline how data flows between components; typically shown in sequence diagrams.
+# b. Component Design
+- Modules/Services: Identify main modules and services, describe their responsibilities.
+- Inter-Component Communication: Define how services will interact (e.g., REST APIs, RPC, gRPC).
+- Data Flow: Outline how data flows between components; typically shown in sequence diagrams.
 
-#### **c. Database Design**
-- **Database Choices:**
-  - **Relational Databases (SQL):** Good for ACID transactions, schema-based design.
-  - **NoSQL Databases:** Key-Value, Document, Column-Family, Graph DB for flexibility, scalability.
-  - **Data Sharding and Replication:** Strategy to scale databases horizontally.
+# c. Database Design
+- Database Choices:
+  - Relational Databases (SQL): Good for ACID transactions, schema-based design.
+  - NoSQL Databases: Key-Value, Document, Column-Family, Graph DB for flexibility, scalability.
+  - Data Sharding and Replication: Strategy to scale databases horizontally.
   
-- **Data Partitioning:** By range, hash, or geographic distribution.
-- **Caching Strategy:** (Redis, Memcached) for reducing load on the database and speeding up response times.
+- Data Partitioning: By range, hash, or geographic distribution.
+- Caching Strategy: (Redis, Memcached) for reducing load on the database and speeding up response times.
 
-#### **d. API Design**
-- **API Gateway:** Centralized entry point for all API requests, manages authentication, rate limiting, etc.
-- **RESTful APIs:** Standard HTTP-based API with CRUD operations.
-- **gRPC:** High-performance, language-neutral API design, ideal for microservices.
-- **GraphQL:** Flexible API for fetching specific data requirements in one request.
+# d. API Design
+- API Gateway: Centralized entry point for all API requests, manages authentication, rate limiting, etc.
+- RESTful APIs: Standard HTTP-based API with CRUD operations.
+- gRPC: High-performance, language-neutral API design, ideal for microservices.
+- GraphQL: Flexible API for fetching specific data requirements in one request.
 
-#### **e. Load Balancing**
-- **Purpose:** Distributes incoming traffic across multiple servers to ensure reliability and performance.
-- **Types of Load Balancing:**
-  - **Round Robin:** Requests are distributed sequentially.
-  - **Least Connections:** Directs traffic to the server with the fewest active connections.
-  - **IP Hashing:** Routes based on client IP for session persistence.
+# e. Load Balancing
+- Purpose: Distributes incoming traffic across multiple servers to ensure reliability and performance.
+- Types of Load Balancing:
+  - Round Robin: Requests are distributed sequentially.
+  - Least Connections: Directs traffic to the server with the fewest active connections.
+  - IP Hashing: Routes based on client IP for session persistence.
   
-- **Global Load Balancing:** Distributes traffic geographically to minimize latency.
+- Global Load Balancing: Distributes traffic geographically to minimize latency.
 
-#### **f. Scalability & Reliability**
-- **Horizontal Scaling:** Adding more servers to handle the load.
-- **Vertical Scaling:** Increasing server resources (CPU, RAM) to handle more traffic.
-- **Replication:** Data replication across servers for redundancy and improved read performance.
-- **Failover Mechanism:** Auto-switching to backup resources if the primary resource fails.
-- **Redundancy:** Duplicate components to prevent single points of failure.
+# f. Scalability & Reliability
+- Horizontal Scaling: Adding more servers to handle the load.
+- Vertical Scaling: Increasing server resources (CPU, RAM) to handle more traffic.
+- Replication: Data replication across servers for redundancy and improved read performance.
+- Failover Mechanism: Auto-switching to backup resources if the primary resource fails.
+- Redundancy: Duplicate components to prevent single points of failure.
 
-#### **g. Caching**
-- **Caching Layers:**
-  - **Client-Side Caching:** Caches data on the client side (e.g., browser cache).
-  - **Edge Caching (CDN):** Stores static resources closer to users, reduces latency.
-  - **Server-Side Caching:** (e.g., Redis, Memcached) for frequent data requests.
+# g. Caching
+- Caching Layers:
+  - Client-Side Caching: Caches data on the client side (e.g., browser cache).
+  - Edge Caching (CDN): Stores static resources closer to users, reduces latency.
+  - Server-Side Caching: (e.g., Redis, Memcached) for frequent data requests.
   
-- **Types of Caches:**
-  - **Data Cache:** Stores database query results.
-  - **Content Cache:** Caches static content like images, CSS, and JavaScript.
+- Types of Caches:
+  - Data Cache: Stores database query results.
+  - Content Cache: Caches static content like images, CSS, and JavaScript.
   
-- **Cache Invalidation:** Determines when to remove outdated cache entries (e.g., TTL, LRU).
+- Cache Invalidation: Determines when to remove outdated cache entries (e.g., TTL, LRU).
 
-#### **h. Security**
-- **Authentication:** Verifies user identity (OAuth, JWT, etc.).
-- **Authorization:** Determines access rights (Role-Based Access Control, Attribute-Based Access Control).
-- **Data Encryption:** Encrypts data in transit (HTTPS/TLS) and at rest (AES, RSA).
-- **Firewalls & VPNs:** Protects internal resources from unauthorized access.
-- **Rate Limiting:** Prevents abuse by limiting requests per IP/user.
+# h. Security
+- Authentication: Verifies user identity (OAuth, JWT, etc.).
+- Authorization: Determines access rights (Role-Based Access Control, Attribute-Based Access Control).
+- Data Encryption: Encrypts data in transit (HTTPS/TLS) and at rest (AES, RSA).
+- Firewalls & VPNs: Protects internal resources from unauthorized access.
+- Rate Limiting: Prevents abuse by limiting requests per IP/user.
 
 ---
 
-### **3. Design Patterns**
+ 3. Design Patterns
 
-#### **a. Strangler Pattern**
-- **Purpose:** Incrementally replace legacy systems by creating microservices that replicate parts of the old system.
+# a. Strangler Pattern
+- Purpose: Incrementally replace legacy systems by creating microservices that replicate parts of the old system.
   
-#### **b. Saga Pattern**
-- **Use Case:** Manages distributed transactions in a microservices architecture.
-- **Types:**
-  - **Choreography:** Each service handles its own transactions.
-  - **Orchestration:** Central coordinator manages transaction flow.
+# b. Saga Pattern
+- Use Case: Manages distributed transactions in a microservices architecture.
+- Types:
+  - Choreography: Each service handles its own transactions.
+  - Orchestration: Central coordinator manages transaction flow.
 
-#### **c. CQRS (Command Query Responsibility Segregation)**
-- **Purpose:** Separates read and write operations for better scalability.
-- **Components:**
-  - **Commands:** Create, Update, and Delete operations.
-  - **Queries:** Only read operations, often optimized for performance.
+# c. CQRS (Command Query Responsibility Segregation)
+- Purpose: Separates read and write operations for better scalability.
+- Components:
+  - Commands: Create, Update, and Delete operations.
+  - Queries: Only read operations, often optimized for performance.
 
-#### **d. Circuit Breaker Pattern**
-- **Purpose:** Prevents cascading failures by breaking the circuit to an external service if it fails too often.
+# d. Circuit Breaker Pattern
+- Purpose: Prevents cascading failures by breaking the circuit to an external service if it fails too often.
 
 ---
 
-### **4. Observability & Monitoring**
+ 4. Observability & Monitoring
 
-#### **a. Logging**
-- **Structured Logging:** Key-value pairs for better readability.
-- **Log Aggregation:** Centralized storage (e.g., ELK Stack) for analysis and alerting.
+# a. Logging
+- Structured Logging: Key-value pairs for better readability.
+- Log Aggregation: Centralized storage (e.g., ELK Stack) for analysis and alerting.
 
-#### **b. Monitoring**
-- **Application Performance Monitoring (APM):** Tracks the performance of applications (e.g., Datadog, New Relic).
-- **Infrastructure Monitoring:** Ensures uptime and health of resources (e.g., CPU, memory, network).
-- **Service Health Checks:** Verifies if services are running correctly.
+# b. Monitoring
+- Application Performance Monitoring (APM): Tracks the performance of applications (e.g., Datadog, New Relic).
+- Infrastructure Monitoring: Ensures uptime and health of resources (e.g., CPU, memory, network).
+- Service Health Checks: Verifies if services are running correctly.
   
-#### **c. Alerting**
-- **Incident Management Tools:** (e.g., PagerDuty, OpsGenie) to alert teams of issues.
-- **Threshold-Based Alerts:** Triggered when specific metrics exceed thresholds.
+# c. Alerting
+- Incident Management Tools: (e.g., PagerDuty, OpsGenie) to alert teams of issues.
+- Threshold-Based Alerts: Triggered when specific metrics exceed thresholds.
 
-#### **d. Distributed Tracing**
-- **Purpose:** Follows requests as they traverse microservices, providing insights into performance bottlenecks.
-- **Tools:** Jaeger, Zipkin.
-
----
-
-### **5. Communication Protocols**
-
-- **HTTP/HTTPS:** Common for web-based APIs, uses REST or SOAP.
-- **WebSockets:** Enables full-duplex communication for real-time data.
-- **Message Queues:** (e.g., RabbitMQ, Kafka) for asynchronous communication.
-- **gRPC:** Binary protocol for low-latency communication in microservices.
+# d. Distributed Tracing
+- Purpose: Follows requests as they traverse microservices, providing insights into performance bottlenecks.
+- Tools: Jaeger, Zipkin.
 
 ---
 
-### **6. Other HLD Considerations**
+ 5. Communication Protocols
 
-#### **a. Data Consistency**
-- **Eventual Consistency:** Common in distributed systems where all nodes eventually sync.
-- **Strong Consistency:** Guarantees immediate consistency, often more challenging to implement.
+- HTTP/HTTPS: Common for web-based APIs, uses REST or SOAP.
+- WebSockets: Enables full-duplex communication for real-time data.
+- Message Queues: (e.g., RabbitMQ, Kafka) for asynchronous communication.
+- gRPC: Binary protocol for low-latency communication in microservices.
 
-#### **b. Rate Limiting**
-- **IP-Based:** Limits requests per IP.
-- **Token Bucket/Leaky Bucket:** Algorithms to control request rates over time.
+---
 
-#### **c. Content Delivery Network (CDN)**
-- **Purpose:** Speeds up content delivery by caching it at edge locations.
-- **Use Cases:** Static content, media files, etc.
+ 6. Other HLD Considerations
+
+# a. Data Consistency
+- Eventual Consistency: Common in distributed systems where all nodes eventually sync.
+- Strong Consistency: Guarantees immediate consistency, often more challenging to implement.
+
+# b. Rate Limiting
+- IP-Based: Limits requests per IP.
+- Token Bucket/Leaky Bucket: Algorithms to control request rates over time.
+
+# c. Content Delivery Network (CDN)
+- Purpose: Speeds up content delivery by caching it at edge locations.
+- Use Cases: Static content, media files, etc.
 

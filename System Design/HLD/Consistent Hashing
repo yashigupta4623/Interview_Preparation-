@@ -1,22 +1,22 @@
-### Consistent Hashing Overview
-- **Mechanism:** Consistent hashing maps both nodes and keys onto a circular hash space (ring). Each key is assigned to the first node clockwise from it on the ring. When a node is added or removed, only a small subset of keys need to be remapped, minimizing data movement.
-- **Virtual Nodes:** To ensure even load distribution, each physical node can represent multiple points on the ring (vnodes), reducing hotspots and improving fault tolerance.
+ Consistent Hashing Overview
+- Mechanism: Consistent hashing maps both nodes and keys onto a circular hash space (ring). Each key is assigned to the first node clockwise from it on the ring. When a node is added or removed, only a small subset of keys need to be remapped, minimizing data movement.
+- Virtual Nodes: To ensure even load distribution, each physical node can represent multiple points on the ring (vnodes), reducing hotspots and improving fault tolerance.
 
-### Advantages
-1. **Minimal Disruption:** Only a small number of keys are reassigned when nodes change, ideal for dynamic environments.
-2. **Scalability:** Easy to add or remove nodes with minimal data rebalancing, making it suitable for large-scale systems.
-3. **Fault Tolerance & Load Balancing:** Virtual nodes allow for better load distribution and system resilience.
+ Advantages
+1. Minimal Disruption: Only a small number of keys are reassigned when nodes change, ideal for dynamic environments.
+2. Scalability: Easy to add or remove nodes with minimal data rebalancing, making it suitable for large-scale systems.
+3. Fault Tolerance & Load Balancing: Virtual nodes allow for better load distribution and system resilience.
 
-### Disadvantages
-1. **Hotspots:** Without vnodes, some nodes may end up with more keys than others, causing load imbalance.
-2. **Implementation Complexity:** Vnodes add complexity, especially with large numbers of nodes.
-3. **Hash Function Dependency:** Performance depends on an effective hash function to ensure even distribution.
-4. **Capacity Constraints:** Suits nodes with similar capacity, as it doesn’t account for varying node capabilities.
+ Disadvantages
+1. Hotspots: Without vnodes, some nodes may end up with more keys than others, causing load imbalance.
+2. Implementation Complexity: Vnodes add complexity, especially with large numbers of nodes.
+3. Hash Function Dependency: Performance depends on an effective hash function to ensure even distribution.
+4. Capacity Constraints: Suits nodes with similar capacity, as it doesn’t account for varying node capabilities.
 
-### Use in High-Level Design (HLD)
+ Use in High-Level Design (HLD)
 Consistent hashing is crucial in distributed systems design, used for:
-- **Distributed Caching (e.g., Memcached):** Evenly distributing cache keys across nodes.
-- **Load Balancing:** Assigning requests to servers based on consistent hashing for minimal disruption.
-- **Distributed Databases:** Sharding data efficiently across multiple nodes for scalability.
+- Distributed Caching (e.g., Memcached): Evenly distributing cache keys across nodes.
+- Load Balancing: Assigning requests to servers based on consistent hashing for minimal disruption.
+- Distributed Databases: Sharding data efficiently across multiple nodes for scalability.
 
 In essence, consistent hashing is key for building scalable, resilient distributed systems with minimal data movement and balanced load distribution.

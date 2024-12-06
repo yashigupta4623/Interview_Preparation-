@@ -1,79 +1,79 @@
-### Divide and Conquer Algorithm - Concise Notes
+ Divide and Conquer Algorithm - Concise Notes
 
-**Definition**:  
-**Divide and Conquer** is a fundamental algorithmic paradigm where a problem is broken down into smaller sub-problems, each solved independently, and then the solutions are combined to solve the original problem.
+Definition:  
+Divide and Conquer is a fundamental algorithmic paradigm where a problem is broken down into smaller sub-problems, each solved independently, and then the solutions are combined to solve the original problem.
 
-**Key Steps**:
-1. **Divide**: Split the problem into smaller, independent sub-problems of the same type.
-2. **Conquer**: Solve each sub-problem recursively.
-3. **Combine**: Merge the solutions of the sub-problems to solve the original problem.
+Key Steps:
+1. Divide: Split the problem into smaller, independent sub-problems of the same type.
+2. Conquer: Solve each sub-problem recursively.
+3. Combine: Merge the solutions of the sub-problems to solve the original problem.
 
-**Time Complexity**:
-- The time complexity for Divide and Conquer algorithms is often expressed using **recurrence relations**.
-- A common recurrence for such algorithms is **T(n) = aT(n/b) + O(n^d)**, which is solved using the **Master Theorem**.
-
----
-
-### Important Divide and Conquer Algorithms
-
-1. **Merge Sort**:
-   - **Problem**: Sort an array.
-   - **Approach**: 
-     - **Divide** the array into two halves.
-     - **Conquer** by recursively sorting both halves.
-     - **Combine** the two sorted halves into a single sorted array.
-   - **Time Complexity**: O(n log n).
-
-2. **Quick Sort**:
-   - **Problem**: Sort an array.
-   - **Approach**:
-     - **Divide** by selecting a pivot element and partitioning the array around the pivot.
-     - **Conquer** by recursively sorting the partitions.
-     - **Combine** by joining the sorted partitions.
-   - **Time Complexity**: O(n log n) (average case), O(n²) (worst case).
-
-3. **Binary Search**:
-   - **Problem**: Find the position of a target element in a sorted array.
-   - **Approach**:
-     - **Divide** by comparing the middle element with the target.
-     - **Conquer** by recursively searching in the left or right half.
-   - **Time Complexity**: O(log n).
-
-4. **Strassen’s Matrix Multiplication**:
-   - **Problem**: Multiply two matrices.
-   - **Approach**:
-     - **Divide** matrices into smaller sub-matrices.
-     - **Conquer** by recursively multiplying the sub-matrices using Strassen's method.
-     - **Combine** the results to get the final product.
-   - **Time Complexity**: O(n^2.81), better than the standard O(n^3).
-
-5. **Closest Pair of Points**:
-   - **Problem**: Find the closest pair of points in a plane.
-   - **Approach**:
-     - **Divide** the points into two halves.
-     - **Conquer** by finding the closest pair in each half.
-     - **Combine** by checking the closest pair across the dividing line.
-   - **Time Complexity**: O(n log n).
-
-6. **Karatsuba Algorithm** (for multiplication):
-   - **Problem**: Multiply two large numbers efficiently.
-   - **Approach**:
-     - **Divide** each number into two halves.
-     - **Conquer** by recursively multiplying the parts.
-     - **Combine** the results using Karatsuba’s formula.
-   - **Time Complexity**: O(n^log3) ≈ O(n^1.585).
+Time Complexity:
+- The time complexity for Divide and Conquer algorithms is often expressed using recurrence relations.
+- A common recurrence for such algorithms is T(n) = aT(n/b) + O(n^d), which is solved using the Master Theorem.
 
 ---
 
-**Advantages**:
+ Important Divide and Conquer Algorithms
+
+1. Merge Sort:
+   - Problem: Sort an array.
+   - Approach: 
+     - Divide the array into two halves.
+     - Conquer by recursively sorting both halves.
+     - Combine the two sorted halves into a single sorted array.
+   - Time Complexity: O(n log n).
+
+2. Quick Sort:
+   - Problem: Sort an array.
+   - Approach:
+     - Divide by selecting a pivot element and partitioning the array around the pivot.
+     - Conquer by recursively sorting the partitions.
+     - Combine by joining the sorted partitions.
+   - Time Complexity: O(n log n) (average case), O(n²) (worst case).
+
+3. Binary Search:
+   - Problem: Find the position of a target element in a sorted array.
+   - Approach:
+     - Divide by comparing the middle element with the target.
+     - Conquer by recursively searching in the left or right half.
+   - Time Complexity: O(log n).
+
+4. Strassen’s Matrix Multiplication:
+   - Problem: Multiply two matrices.
+   - Approach:
+     - Divide matrices into smaller sub-matrices.
+     - Conquer by recursively multiplying the sub-matrices using Strassen's method.
+     - Combine the results to get the final product.
+   - Time Complexity: O(n^2.81), better than the standard O(n^3).
+
+5. Closest Pair of Points:
+   - Problem: Find the closest pair of points in a plane.
+   - Approach:
+     - Divide the points into two halves.
+     - Conquer by finding the closest pair in each half.
+     - Combine by checking the closest pair across the dividing line.
+   - Time Complexity: O(n log n).
+
+6. Karatsuba Algorithm (for multiplication):
+   - Problem: Multiply two large numbers efficiently.
+   - Approach:
+     - Divide each number into two halves.
+     - Conquer by recursively multiplying the parts.
+     - Combine the results using Karatsuba’s formula.
+   - Time Complexity: O(n^log3) ≈ O(n^1.585).
+
+---
+
+Advantages:
 - Efficient for large problems, particularly when the divide step significantly reduces problem size.
 - Can be implemented in parallel, as sub-problems are independent.
 
-**Disadvantages**:
+Disadvantages:
 - Overhead of recursive function calls can affect performance for small input sizes.
 - Not suitable when sub-problems are highly dependent on each other.
 
-**Applications**:
+Applications:
 - Sorting algorithms (Merge Sort, Quick Sort)
 - Searching (Binary Search)
 - Multiplication of large numbers (Karatsuba)
