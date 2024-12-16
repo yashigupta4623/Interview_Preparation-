@@ -52,7 +52,8 @@ Perfect for quick **revisions** and focused **interview preparation**! 🎯
 
 ### **Computer Fundamentals**
 - For a comprehensive guide on CS core subjects, refer [here](https://www.geeksforgeeks.org/prepare-cs-core-subjects-for-placements/?ref=ml_lbp).  
-- **DBMS**: Watch this video [here](https://youtu.be/dl00fOOYLOM?si=ND40tynF23HQ4Yat).
+- **DBMS**: Watch this video [here](https://youtu.be/dl00fOOYLOM?si=ND40tynF23HQ4Yat)
+- LeetCode Pattern : [here](https://www.blog.codeinmotion.io/p/leetcode-patterns)
 
 ### **DSA Crash Course**
 To supplement your DSA knowledge, check out [LeetCode's Interview Crash Course](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/).
