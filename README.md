@@ -1,7 +1,3 @@
-Here is the **formatted README.md** for your repository:
-
----
-
 # Interview Preparation
 
 Welcome to the **Interview Preparation** repository! 🚀  
