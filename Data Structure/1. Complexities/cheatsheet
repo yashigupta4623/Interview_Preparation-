@@ -9,15 +9,15 @@ In DSA, the main goal is to solve problems effectively and efficiently. To deter
 
  Time Complexity
 
-| Complexity         | Notation | Description                                     | Example                               |
-|------------------------|--------------|-----------------------------------------------------|-------------------------------------------|
+| Complexity         | Notation     | Description                                         | Example                                   |
+|--------------------|--------------|-----------------------------------------------------|-------------------------------------------|
 | Constant           | O(1)         | Execution time is constant regardless of input size | Accessing an element in an array          |
 | Logarithmic        | O(log n)     | Time grows logarithmically as input size increases  | Binary search in a sorted array           |
 | Linear             | O(n)         | Time grows linearly with input size                 | Finding an element in an unsorted array   |
-| Linearithmic       | O(n log n)   | Time grows as n log n; typical of efficient sorting  | Merge Sort, Quick Sort                   |
+| Linearithmic       | O(n log n)   | Time grows as n log n; typical of efficient sorting | Merge Sort, Quick Sort                    |
 | Quadratic          | O(n²)        | Time grows quadratically with input size            | Bubble Sort, Selection Sort               |
 | Cubic              | O(n³)        | Time grows cubically with input size                | Algorithms with three nested loops        |
-| Exponential        | O(2^n)       | Time doubles with each additional element            | Tower of Hanoi problem                   |
+| Exponential        | O(2^n)       | Time doubles with each additional element           | Tower of Hanoi problem                    |
 | Factorial          | O(n!)        | Time grows factorially with input size              | Generating all permutations               |
 
 ---
@@ -44,9 +44,10 @@ To compare efficiencies of algorithms, we use asymptotic notation, a mathematica
 | Theta (θ)    | Represents the average complexity of an algorithm.                                              |
 
 ---
+![alt text](image.png)
+---
 
- General Notes
-
+General Notes :
 - Best, Average, Worst Cases: Analyze complexities for different scenarios; for example, Quick Sort has O(n log n) average but O(n²) worst-case.
 - Amortized Analysis: Average time per operation over a sequence (e.g., dynamic arrays).
 
