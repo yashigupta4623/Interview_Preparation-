@@ -1,0 +1,97 @@
+# Basics of Maths Required for DSA
+
+## Prime Number Logic
+A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. To check if a number `n` is prime, you can test divisibility from 2 up to the square root of `n`.
+
+## Sieve of Eratosthenes
+The Sieve of Eratosthenes is an efficient algorithm to find all prime numbers less than `n`. It works by iteratively marking the multiples of each prime starting from 2. The time complexity is O(n log log n).
+
+## Segmented Sieve
+The segmented sieve is an extension of the Sieve of Eratosthenes that works in segments, useful for finding primes in a large range. It divides the range into smaller segments and applies the sieve algorithm to each segment.
+
+## GCD & Its Formulas
+The Greatest Common Divisor (GCD) of two numbers is the largest number that divides both of them. The Euclidean algorithm is an efficient method to compute the GCD:
+```
+gcd(a, b) = gcd(b, a % b)
+gcd(a, b) = gcd(b, a - b)
+```
+
+## Relation Between LCM & GCD
+The Least Common Multiple (LCM) of two numbers `a` and `b` can be found using their GCD:
+```
+LCM(a, b) = |a * b| / GCD(a, b)
+```
+
+## Modulo Arithmetic & Its Properties
+Modulo arithmetic deals with the remainder when one number is divided by another. Properties include:
+- (a + b) % c = [(a % c) + (b % c)] % c
+- (a * b) % c = [(a % c) * (b % c)] % c
+- (a - b) % c = [(a % c) - (b % c) + c] % c
+
+## Fast Exponentiation
+Fast exponentiation computes `a^b` in O(log b) time using the method of exponentiation by squaring:
+```
+def fast_exp(a, b, m):
+    result = 1
+    while b > 0:
+        if b % 2 == 1:
+            result = (result * a) % m
+        a = (a * a) % m
+        b //= 2
+    return result
+```
+
+## Modular Exponential Code
+The modular exponentiation calculates `(a^b) % c` efficiently:
+```
+def modular_exponentiation(a, b, c):
+    result = 1
+    a = a % c
+    while b > 0:
+        if b % 2 == 1:
+            result = (result * a) % c
+        b = b >> 1
+        a = (a * a) % c
+    return result
+```
+
+## Pigeonhole Principle
+The pigeonhole principle states that if `n` items are put into `m` containers, with `n > m`, then at least one container must contain more than one item.
+
+## Catalan Number
+Catalan numbers are a sequence of natural numbers with applications in combinatorial mathematics. The nth Catalan number is given by:
+```
+C(n) = (2n)! / ((n + 1)!n!)
+```
+
+## Inclusion-Exclusion Principle
+The principle of inclusion-exclusion is used to calculate the size of the union of multiple sets:
+```
+|A ∪ B| = |A| + |B| - |A ∩ B|
+```
+
+## Factorial of Large Number
+To compute the factorial of a large number, use an array to store individual digits of the result and handle carry-over during multiplication.
+```
+def factorial_of_large_number(n):
+    # Array to store individual digits of the result
+    result = [1]
+    
+    # Perform multiplication from 2 to n
+    for i in range(2, n + 1):
+        carry = 0
+        # Multiply each digit in the result with the current number
+        for j in range(len(result)):
+            temp = result[j] * i + carry
+            result[j] = temp % 10  # Store the last digit of the result
+            carry = temp // 10    # Update the carry
+        
+        # If there's any carry left, add it to the result
+        while carry > 0:
+            result.append(carry % 10)
+            carry //= 10
+
+    # Since the digits are stored in reverse order, reverse the result
+    result.reverse()
+    return ''.join(map(str, result))
+```
