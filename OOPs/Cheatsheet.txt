@@ -286,3 +286,60 @@ print(f"Perimeter: {rect.perimeter()}")  # Output: Perimeter: 16
 
 # print(rect.__length)  # This will raise an AttributeError as length and width are private attributes
 ```
+
+What is the difference between method overloading and method overriding?
+Answer: Method overloading occurs when a class has multiple methods with the same name but different parameter lists. The appropriate method is determined at compile time based on the method signature. Method overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. The decision on which method to call is made at runtime based on the actual object type.
+
+What are abstract classes?
+Answer: An abstract class is a class that cannot be instantiated directly and may contain one or more abstract methods. Abstract methods are declared without implementation and must be implemented by subclasses.
+
+What is an interface?
+Answer: An interface is a blueprint that defines a set of methods that a class must implement. It provides a way to achieve multiple inheritance in languages that do not support it directly.
+
+What is the "this" keyword?
+Answer: The "this" keyword refers to the current object instance within a class. It is used to access instance variables or call instance methods of the class.
+
+What is the "super" keyword?
+Answer: The "super" keyword is used to call the superclass's constructor or refer to the superclass's methods or variables from a subclass.
+
+What is method hiding?
+Answer: Method hiding occurs when a subclass defines a static method with the same name and signature as a static method in the superclass. The subclass's method hides the superclass's method, and the method invoked depends on the reference type rather than the object type.
+
+What are access modifiers, and what are their purposes?
+Answer: Access modifiers define the visibility and accessibility of class members (attributes, methods, constructors). The main access modifiers are public, private, protected, and package-private/default. They control how members can be accessed from other classes and packages.
+
+Explain the "final" keyword.
+Answer: In OOP, the "final" keyword can be applied to a class, method, or variable. A final class cannot be subclassed, a final method cannot be overridden, and a final variable cannot be reassigned once initialized.
+
+What is a constructor?
+Answer: A constructor is a special method that is automatically called when an object of a class is created. It is used to initialize the object's state and perform setup tasks.
+
+What is a destructor?
+Answer: A destructor is a special method that is called when an object is destroyed or goes out of scope. It is used to release resources and perform cleanup operations.
+
+Explain the concept of static members
+Answer: Static members (attributes or methods) belong to the class rather than individual objects. They are shared among all instances of the class and can be accessed using the class name.
+
+What is the "instanceof" operator used for?
+Answer: The "instanceof" operato is used to test whether an object is an instance of a particular class or implements a specific interface. It checks the object's type at runtime and returns a boolean value indicating whether the object is an instance of the specified class or interface.
+
+What is a constructor chaining?
+Answer: Constructor chaining is the process of calling one constructor from another within the same class or between base and derived classes. It allows constructors to reuse code and perform common initialization tasks.
+
+What is the difference between composition and inheritance?
+Answer: Composition represents a "has-a" relationship, where a class contains objects of other classes as its members. Inheritance represents an "is-a" relationship, where a subclass inherits properties and behaviors from a superclass.
+
+What is method visibility, and how is it controlled?
+Answer: Method visibility refers to the accessibility of methods from other classes. It is controlled by access modifiers like "public," "private","protected," and "package-private/default."
+
+Explain the concept of dynamic method dispatch.
+Answer: Dynamic method dispatch is the mechanism that enables a method call on an object to be resolved at runtime based on the actual type of the object, rather than the reference type.
+
+What is the difference between shallow copy and deep copy?
+Answer: Shallow copy creates a new object but copies only the references of the original object's members. Deep copy, on the other hand, creates a new object and copies all the content, including recursively copying nested objects, if any.
+
+What are virtual functions (or virtual methods)?
+Answer: Virtual functions allow late binding or runtime polymorphism, enabling a subclass to provide its implementation for a method declared in a base class.
+
+What is the Liskov Substitution Principle (LSP)?
+Answer: The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program. Subclasses must maintain the behavior expected by the superclass.
