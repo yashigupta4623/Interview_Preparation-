@@ -1,0 +1,41 @@
+### Here comes the template.
+
+For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a hashmap assisted with two pointers. The template is given below.
+
+---
+def findSubstring(s: str) -> int:
+    # Initialize the hash map for character frequency
+    char_map = [0] * 128  
+    counter = 0  # Check whether the substring is valid
+    begin, end = 0, 0  # Two pointers, one for the start and one for the end of the window
+    d = float('inf')  # Length of the substring (set to infinity for minimum search)
+
+    # Initialize the hash map here (example for finding substrings with distinct characters)
+    # For example, if we are given a pattern to match, we would update the `char_map` based on that pattern.
+
+    # Loop through the string
+    while end < len(s):
+        # Expand the window by moving the `end` pointer
+        char_map[ord(s[end])] -= 1
+        if char_map[ord(s[end])] >= 0:  # Modify the counter condition based on problem requirements
+            counter += 1
+        end += 1
+
+        # Shrink the window by moving the `begin` pointer when a condition is met
+        while counter == len(s):  # Replace this with the appropriate condition for your problem
+            # Update d for minimum length if required
+            d = min(d, end - begin)
+            
+            # Increase `begin` to make the window invalid/valid again
+            char_map[ord(s[begin])] += 1
+            if char_map[ord(s[begin])] > 0:  # Modify the counter condition based on problem requirements
+                counter -= 1
+            begin += 1
+
+        # Update d for maximum length if required (if applicable)
+        # This step depends on the problem you're solving.
+
+    return d if d != float('inf') else 0
+---
+
+One thing needs to be mentioned is that when asked to find maximum substring, we should update maximum after the inner while loop to guarantee that the substring is valid. On the other hand, when asked to find minimum substring, we should update minimum inside the inner while loop.
