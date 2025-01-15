@@ -1,0 +1,5 @@
+# to check whether a string is a subsequence of another string
+
+def is_subsequence(word, s): 
+    it = iter(s) 
+    return all(char in it for char in word)
