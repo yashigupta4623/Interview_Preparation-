@@ -1,5 +1,13 @@
 # to check whether a string is a subsequence of another string
-
+# Shortcut
 def is_subsequence(word, s): 
     it = iter(s) 
     return all(char in it for char in word)
+# actual-way
+def is_subsequence(word, s):
+    i, j = 0, 0
+    while i < len(word) and j < len(s):
+        if word[i] == s[j]:
+            i += 1
+        j += 1
+    return i == len(word) 
