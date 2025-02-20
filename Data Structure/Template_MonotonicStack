@@ -1,0 +1,24 @@
+from typing import List
+
+def monotonic_stack_template(nums: List[int]) -> List[int]:
+    n = len(nums)
+    result = [-1] * n  # Initialize result array with -1 (or any default value)
+    
+    stack = []  # Using list as a stack in Python
+
+    # Loop through the array elements
+    for i in range(n):
+        # While stack is NOT empty AND current element violates the monotonic property
+        while stack and violates_monotonic_property(nums[stack[-1]], nums[i]):
+            index = stack.pop()  # Remove top element (process it)
+            result[index] = i  # Example: Store index difference (customizable)
+
+        # Push the current element's index onto the stack
+        stack.append(i)
+    
+    return result
+
+# Define the violates_monotonic_property function as per the required logic
+def violates_monotonic_property(top: int, current: int) -> bool:
+    # Customize this condition based on whether you need a mono-increasing or mono-decreasing stack
+    return top > current  # Example for a decreasing stack
