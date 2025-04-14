@@ -1,0 +1,46 @@
+objects - entities in real world.
+class - blueprint of object.
+
+access modifiers :
+- private : data & methods accessible inside class 
+- public : data & methods accessible to everyone
+- protected : data & methods accessible inside class & to its derived class
+
+Encapsulation : wrapping up of data & member functions in a single unit called class.
+
+Constructor : Special method invoked automatically at time of object creation, used for Instalisation.
+- Same name as class.
+- Constructor doesnt have a return type.
+- Only called once(automatically), at object creation.
+- Memory allocation happens when Constructor is called.
+of 3 types : parameterized, non-parameterized, copy(used to copy properties of one object to another).
+
+- this : points to the current object
+
+- Shallow Copy : creates a new object, but doesn’t copy nested objects — it just copies references to them. So if you change a nested object in the copy, it affects the original too.
+- Deep Copy : creates a new object, and recursively copies all nested objects — so it’s a full, independent clone.
+
+Destructor: Opposite of Constructor — it is a special method that is automatically called when an object is about to be destroyed or goes out of scope. In Python, the destructor method is defined using __del__().Python uses garbage collection, so destructors aren't always called immediately when you delete an object.
+
+- Inheritance : when properties and member functionsof base class are passed on to the derived class - FOR CODE RESUSABILITY.
+first, BASE CLASS CALLED THN DERIVED CLASS in CONSTRCUTOR & visa versa for DE-CONSTRCUTOR.
+
+Types : Single, Multi-level, Multiple, Hieracrchial, Hybrid
+
+
+Polymorphism : ability of objects to take on different forms or behave in diff way depending on the context in which they are used.
+
+- Compile Time Polymorphism: eg- constructor overloading, operator overloading, and function overloading
+- Run Time Polymorphism : 
+function overridding -> inheritance : parent & child both contain same function with different implementation.
+virtual function : dynamic in nature, defined by keywrd "virtual" inside base class n are always declared with base class and overridden in child class.
+
+Abstraction : hiding all unecessary details & showing only all impt parts.
+- can be done w access modifiers n abstract class 
+using abstract classes : used to provide a base class from other classes can be derived, cant be instanisated(object) n are meant to be Inherited and typically used to define na interface for derived classes.
+
+- Static keyword : is used to define a variable or method that belongs to a class, not to any specific instance of the class.
+
+Static Variable: Shared across all objects of the class. Changes made by one object affect all others.
+
+Static Method: Can be called using the class name without creating an object. It can only access static variables or other static methods.
